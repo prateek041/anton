@@ -1,0 +1,23 @@
+# === Build output ===
+build/
+
+# === Disk images (Phase 1+) ===
+*.img
+*.iso
+
+# === QEMU ===
+*.qcow2
+
+# === mdbook generated output ===
+docs/book/
+
+# === Editor swap/temp files ===
+*.swp
+*.swo
+*~
+
+# === macOS junk ===
+.DS_Store
+
+# === Cross-compiler (never commit binaries) ===
+opt/
