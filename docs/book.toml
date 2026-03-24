@@ -1,0 +1,8 @@
+[book]
+title = "Anton OS"
+authors = ["Prateek"]
+description = "Documentation for the Anton operating system"
+src = "src"
+
+[build]
+build-dir = "book"
