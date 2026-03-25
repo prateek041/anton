@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 480" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="680" height="480" fill="#1a1a2e"/>
+
+  <text x="340" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">x86 Physical Address Space</text>
+
+  <!-- Address space bar -->
+  <rect x="80" y="44" width="140" height="400" rx="6" fill="#1a1a2e" stroke="#3a3a5a" stroke-width="1.5"/>
+
+  <!-- Region: 0x00000 - 0x9FFFF: Conventional Memory / BIOS -->
+  <rect x="82" y="46" width="136" height="50" rx="4" fill="#2a1a3a" stroke="#ce93d8" stroke-width="1"/>
+  <text x="150" y="68" text-anchor="middle" fill="#ce93d8" font-size="9" font-weight="bold">Low Memory</text>
+  <text x="150" y="82" text-anchor="middle" fill="#8e99a4" font-size="8">BIOS, IVT, Stack</text>
+  <text x="60" y="58" text-anchor="end" fill="#8e99a4" font-size="8" font-family="monospace">0x00000</text>
+
+  <!-- Region: 0xA0000 - 0xBFFFF: Video Memory (VGA) -->
+  <rect x="82" y="100" width="136" height="48" rx="4" fill="#2e2a1a" stroke="#fff176" stroke-width="2"/>
+  <text x="150" y="120" text-anchor="middle" fill="#fff176" font-size="9" font-weight="bold">VGA Memory</text>
+  <text x="150" y="134" text-anchor="middle" fill="#fff176" font-size="8">0xB8000 = text buffer</text>
+  <text x="60" y="108" text-anchor="end" fill="#8e99a4" font-size="8" font-family="monospace">0xA0000</text>
+
+  <!-- Region: 0xC0000 - 0xFFFFF: BIOS ROM -->
+  <rect x="82" y="152" width="136" height="36" rx="4" fill="#1a1a2e" stroke="#8e99a4" stroke-width="1"/>
+  <text x="150" y="174" text-anchor="middle" fill="#8e99a4" font-size="9">BIOS ROM</text>
+  <text x="60" y="162" text-anchor="end" fill="#8e99a4" font-size="8" font-family="monospace">0xC0000</text>
+
+  <!-- Region: 0x100000+: Usable RAM (kernel loads here) -->
+  <rect x="82" y="192" width="136" height="160" rx="4" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="150" y="255" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">Usable RAM</text>
+  <text x="150" y="275" text-anchor="middle" fill="#81c784" font-size="9">Kernel loads at</text>
+  <text x="150" y="289" text-anchor="middle" fill="#81c784" font-size="9">0x100000 (1 MB)</text>
+  <text x="60" y="202" text-anchor="end" fill="#81c784" font-size="8" font-family="monospace">0x100000</text>
+
+  <!-- Region: High addresses: Device MMIO -->
+  <rect x="82" y="356" width="136" height="44" rx="4" fill="#2a1a1a" stroke="#ef5350" stroke-width="1"/>
+  <text x="150" y="376" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="bold">Device MMIO</text>
+  <text x="150" y="390" text-anchor="middle" fill="#8e99a4" font-size="8">APIC, PCI, GPU</text>
+  <text x="60" y="366" text-anchor="end" fill="#8e99a4" font-size="8" font-family="monospace">0xFEC00000</text>
+
+  <!-- Top of address space -->
+  <text x="60" y="440" text-anchor="end" fill="#8e99a4" font-size="8" font-family="monospace">0xFFFFFFFF</text>
+  <rect x="82" y="404" width="136" height="36" rx="4" fill="#1a1a2e" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="150" y="426" text-anchor="middle" fill="#8e99a4" font-size="8">End (4 GB)</text>
+
+  <!-- ====== VGA Callout (right side) ====== -->
+  <!-- Callout line from VGA region -->
+  <line x1="218" y1="124" x2="280" y2="124" stroke="#fff176" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="280" y1="124" x2="280" y2="70" stroke="#fff176" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="280" y1="70" x2="310" y2="70" stroke="#fff176" stroke-width="1.5"/>
+
+  <!-- VGA detail box -->
+  <rect x="310" y="44" width="340" height="170" rx="8" fill="#1a1a2e" stroke="#fff176" stroke-width="2"/>
+  <text x="480" y="68" text-anchor="middle" fill="#fff176" font-size="13" font-weight="bold">VGA Text Buffer at 0xB8000</text>
+
+  <!-- Character cell explanation -->
+  <text x="330" y="94" fill="#e0e0e0" font-size="10">Each screen position = 2 bytes:</text>
+
+  <!-- Char byte -->
+  <rect x="330" y="104" width="100" height="32" rx="4" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="380" y="124" text-anchor="middle" fill="#4fc3f7" font-size="11" font-weight="bold" font-family="monospace">0x48</text>
+  <text x="380" y="148" text-anchor="middle" fill="#4fc3f7" font-size="9">Character ('H')</text>
+
+  <!-- Attribute byte -->
+  <rect x="440" y="104" width="100" height="32" rx="4" fill="#2e2a1a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="490" y="124" text-anchor="middle" fill="#ffb74d" font-size="11" font-weight="bold" font-family="monospace">0x0F</text>
+  <text x="490" y="148" text-anchor="middle" fill="#ffb74d" font-size="9">Color (white/black)</text>
+
+  <!-- Result -->
+  <rect x="370" y="162" width="160" height="30" rx="4" fill="#000" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="450" y="182" text-anchor="middle" fill="#fff" font-size="14" font-family="monospace" font-weight="bold">H</text>
+  <text x="540" y="182" fill="#8e99a4" font-size="9">Result on screen</text>
+
+  <text x="480" y="205" text-anchor="middle" fill="#8e99a4" font-size="9">Write these 2 bytes to 0xB8000 and 'H' appears!</text>
+
+  <!-- Port-Mapped I/O section (bottom right) -->
+  <rect x="310" y="240" width="340" height="190" rx="8" fill="#1a1a2e" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="480" y="264" text-anchor="middle" fill="#4fc3f7" font-size="13" font-weight="bold">Port-Mapped I/O (separate space)</text>
+
+  <text x="330" y="290" fill="#8e99a4" font-size="10" font-weight="bold">Port</text>
+  <text x="460" y="290" fill="#8e99a4" font-size="10" font-weight="bold">Device</text>
+
+  <text x="330" y="312" fill="#e0e0e0" font-size="10" font-family="monospace">0x20</text>
+  <text x="460" y="312" fill="#e0e0e0" font-size="10">Master PIC</text>
+
+  <text x="330" y="332" fill="#e0e0e0" font-size="10" font-family="monospace">0x40</text>
+  <text x="460" y="332" fill="#e0e0e0" font-size="10">PIT Timer</text>
+
+  <text x="330" y="352" fill="#fff176" font-size="10" font-family="monospace">0x60</text>
+  <text x="460" y="352" fill="#fff176" font-size="10">PS/2 Keyboard</text>
+
+  <text x="330" y="372" fill="#e0e0e0" font-size="10" font-family="monospace">0x1F0</text>
+  <text x="460" y="372" fill="#e0e0e0" font-size="10">ATA Disk</text>
+
+  <text x="330" y="392" fill="#e0e0e0" font-size="10" font-family="monospace">0x3F8</text>
+  <text x="460" y="392" fill="#e0e0e0" font-size="10">Serial COM1</text>
+
+  <text x="480" y="420" text-anchor="middle" fill="#8e99a4" font-size="9">Accessed via IN/OUT instructions, not MOV.</text>
+
+  <!-- Bottom caption -->
+  <text x="340" y="468" text-anchor="middle" fill="#5c6370" font-size="10">Not all addresses map to RAM. Some map to hardware devices.</text>
+</svg>

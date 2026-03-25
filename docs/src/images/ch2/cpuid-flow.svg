@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="700" height="340" fill="#1a1a2e"/>
+
+  <defs>
+    <marker id="cf-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e0e0e0"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">CPUID Instruction</text>
+
+  <!-- Input: EAX -->
+  <rect x="40" y="80" width="140" height="50" rx="6" fill="#1b2a3a" stroke="#fff176" stroke-width="2"/>
+  <text x="110" y="102" text-anchor="middle" fill="#fff176" font-size="11" font-weight="bold">Input: EAX</text>
+  <text x="110" y="120" text-anchor="middle" fill="#e0e0e0" font-size="10">(leaf number)</text>
+
+  <!-- Arrow in -->
+  <line x1="180" y1="105" x2="248" y2="105" stroke="#e0e0e0" stroke-width="2" marker-end="url(#cf-arr)"/>
+
+  <!-- CPUID box -->
+  <rect x="250" y="70" width="130" height="70" rx="10" fill="#2a2a4a" stroke="#4fc3f7" stroke-width="3"/>
+  <text x="315" y="100" text-anchor="middle" fill="#4fc3f7" font-size="16" font-weight="bold">CPUID</text>
+  <text x="315" y="122" text-anchor="middle" fill="#8e99a4" font-size="9">opcode: 0F A2</text>
+
+  <!-- Output arrows -->
+  <line x1="380" y1="85" x2="448" y2="85" stroke="#e0e0e0" stroke-width="2" marker-end="url(#cf-arr)"/>
+  <line x1="380" y1="95" x2="448" y2="95" stroke="#e0e0e0" stroke-width="2" marker-end="url(#cf-arr)"/>
+  <line x1="380" y1="110" x2="448" y2="110" stroke="#e0e0e0" stroke-width="2" marker-end="url(#cf-arr)"/>
+  <line x1="380" y1="120" x2="448" y2="120" stroke="#e0e0e0" stroke-width="2" marker-end="url(#cf-arr)"/>
+
+  <!-- Output registers -->
+  <rect x="450" y="65" width="80" height="24" rx="4" fill="#1b2a3a" stroke="#ef5350" stroke-width="2"/>
+  <text x="490" y="82" text-anchor="middle" fill="#ef5350" font-size="11" font-weight="bold">EAX</text>
+
+  <rect x="450" y="93" width="80" height="24" rx="4" fill="#1b2a3a" stroke="#81c784" stroke-width="2"/>
+  <text x="490" y="110" text-anchor="middle" fill="#81c784" font-size="11" font-weight="bold">EBX</text>
+
+  <rect x="450" y="121" width="80" height="24" rx="4" fill="#1b2a3a" stroke="#ce93d8" stroke-width="2"/>
+  <text x="490" y="138" text-anchor="middle" fill="#ce93d8" font-size="11" font-weight="bold">ECX</text>
+
+  <rect x="450" y="149" width="80" height="24" rx="4" fill="#1b2a3a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="490" y="166" text-anchor="middle" fill="#ffb74d" font-size="11" font-weight="bold">EDX</text>
+
+  <!-- Leaf 0 example -->
+  <rect x="40" y="195" width="300" height="100" rx="6" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="190" y="215" text-anchor="middle" fill="#4fc3f7" font-size="11" font-weight="bold">Leaf 0 (EAX = 0): Vendor ID</text>
+  <line x1="55" y1="225" x2="325" y2="225" stroke="#3a3a5a" stroke-width="1"/>
+
+  <text x="55" y="245" fill="#ef5350" font-size="10">EAX = max supported leaf</text>
+  <text x="55" y="262" fill="#81c784" font-size="10">EBX = "Genu" (0x756E6547)</text>
+  <text x="55" y="279" fill="#ce93d8" font-size="10">ECX = "ntel" (0x6C65746E)</text>
+  <text x="55" y="296" fill="#ffb74d" font-size="10">EDX = "ineI" (0x49656E69)</text>
+
+  <!-- Leaf 1 example -->
+  <rect x="370" y="195" width="300" height="100" rx="6" fill="#1b2a3a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="520" y="215" text-anchor="middle" fill="#81c784" font-size="11" font-weight="bold">Leaf 1 (EAX = 1): Features</text>
+  <line x1="385" y1="225" x2="655" y2="225" stroke="#3a3a5a" stroke-width="1"/>
+
+  <text x="385" y="245" fill="#ef5350" font-size="10">EAX = family / model / stepping</text>
+  <text x="385" y="262" fill="#81c784" font-size="10">EBX = brand / CLFLUSH / APIC ID</text>
+  <text x="385" y="279" fill="#ce93d8" font-size="10">ECX = SSE3, SSSE3, SSE4.1 ...</text>
+  <text x="385" y="296" fill="#ffb74d" font-size="10">EDX = FPU, PSE, PAE, APIC ...</text>
+
+  <text x="350" y="325" text-anchor="middle" fill="#fff176" font-size="10">An OS checks feature flags before using optional CPU features (e.g., PAE, APIC).</text>
+</svg>

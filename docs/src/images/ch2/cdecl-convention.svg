@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="300" fill="#1a1a2e"/>
+
+  <defs>
+    <marker id="cd-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e0e0e0"/>
+    </marker>
+  </defs>
+
+  <text x="400" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">cdecl Calling Convention</text>
+
+  <!-- Step 1: Caller pushes args -->
+  <rect x="20" y="55" width="110" height="80" rx="6" fill="#1b2a3a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="75" y="70" text-anchor="middle" fill="#ffb74d" font-size="9" font-weight="bold">1</text>
+  <text x="75" y="86" text-anchor="middle" fill="#ffb74d" font-size="10" font-weight="bold">Caller pushes</text>
+  <text x="75" y="100" text-anchor="middle" fill="#ffb74d" font-size="10" font-weight="bold">args</text>
+  <text x="75" y="118" text-anchor="middle" fill="#e0e0e0" font-size="9">right-to-left</text>
+  <text x="75" y="130" text-anchor="middle" fill="#8e99a4" font-size="8">PUSH arg2</text>
+  <text x="75" y="140" text-anchor="middle" fill="#8e99a4" font-size="8">PUSH arg1</text>
+
+  <line x1="130" y1="95" x2="148" y2="95" stroke="#e0e0e0" stroke-width="1.5" marker-end="url(#cd-arr)"/>
+
+  <!-- Step 2: CALL -->
+  <rect x="150" y="55" width="90" height="80" rx="6" fill="#1b2a3a" stroke="#ef5350" stroke-width="2"/>
+  <text x="195" y="70" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="bold">2</text>
+  <text x="195" y="88" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="bold">CALL func</text>
+  <text x="195" y="108" text-anchor="middle" fill="#e0e0e0" font-size="9">pushes return</text>
+  <text x="195" y="120" text-anchor="middle" fill="#e0e0e0" font-size="9">address onto</text>
+  <text x="195" y="132" text-anchor="middle" fill="#e0e0e0" font-size="9">stack</text>
+
+  <line x1="240" y1="95" x2="258" y2="95" stroke="#e0e0e0" stroke-width="1.5" marker-end="url(#cd-arr)"/>
+
+  <!-- Step 3: Prologue -->
+  <rect x="260" y="55" width="120" height="80" rx="6" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="320" y="70" text-anchor="middle" fill="#4fc3f7" font-size="9" font-weight="bold">3</text>
+  <text x="320" y="86" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">Callee Prologue</text>
+  <text x="320" y="104" text-anchor="middle" fill="#e0e0e0" font-size="9">PUSH EBP</text>
+  <text x="320" y="118" text-anchor="middle" fill="#e0e0e0" font-size="9">MOV EBP, ESP</text>
+  <text x="320" y="132" text-anchor="middle" fill="#e0e0e0" font-size="9">SUB ESP, N</text>
+
+  <line x1="380" y1="95" x2="398" y2="95" stroke="#e0e0e0" stroke-width="1.5" marker-end="url(#cd-arr)"/>
+
+  <!-- Step 4: Body -->
+  <rect x="400" y="55" width="100" height="80" rx="6" fill="#1b2a3a" stroke="#81c784" stroke-width="2"/>
+  <text x="450" y="70" text-anchor="middle" fill="#81c784" font-size="9" font-weight="bold">4</text>
+  <text x="450" y="88" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">Function</text>
+  <text x="450" y="104" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">Body</text>
+  <text x="450" y="122" text-anchor="middle" fill="#e0e0e0" font-size="9">return val</text>
+  <text x="450" y="134" text-anchor="middle" fill="#e0e0e0" font-size="9">in EAX</text>
+
+  <line x1="500" y1="95" x2="518" y2="95" stroke="#e0e0e0" stroke-width="1.5" marker-end="url(#cd-arr)"/>
+
+  <!-- Step 5: Epilogue -->
+  <rect x="520" y="55" width="120" height="80" rx="6" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="580" y="70" text-anchor="middle" fill="#4fc3f7" font-size="9" font-weight="bold">5</text>
+  <text x="580" y="86" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">Callee Epilogue</text>
+  <text x="580" y="104" text-anchor="middle" fill="#e0e0e0" font-size="9">MOV ESP, EBP</text>
+  <text x="580" y="118" text-anchor="middle" fill="#e0e0e0" font-size="9">POP EBP</text>
+  <text x="580" y="132" text-anchor="middle" fill="#e0e0e0" font-size="9">RET</text>
+
+  <line x1="640" y1="95" x2="658" y2="95" stroke="#e0e0e0" stroke-width="1.5" marker-end="url(#cd-arr)"/>
+
+  <!-- Step 6: Caller cleans -->
+  <rect x="660" y="55" width="120" height="80" rx="6" fill="#1b2a3a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="720" y="70" text-anchor="middle" fill="#ffb74d" font-size="9" font-weight="bold">6</text>
+  <text x="720" y="88" text-anchor="middle" fill="#ffb74d" font-size="10" font-weight="bold">Caller cleans</text>
+  <text x="720" y="104" text-anchor="middle" fill="#ffb74d" font-size="10" font-weight="bold">stack</text>
+  <text x="720" y="122" text-anchor="middle" fill="#e0e0e0" font-size="9">ADD ESP, 8</text>
+  <text x="720" y="134" text-anchor="middle" fill="#8e99a4" font-size="8">(2 args x 4)</text>
+
+  <!-- Color legend at bottom -->
+  <rect x="120" y="170" width="240" height="36" rx="5" fill="#2a2a4a" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="240" y="192" text-anchor="middle" fill="#ffb74d" font-size="11" font-weight="bold">Caller Responsibilities</text>
+  <text x="240" y="206" text-anchor="middle" fill="#e0e0e0" font-size="9">Push args, invoke CALL, clean up stack afterward</text>
+
+  <rect x="420" y="170" width="240" height="36" rx="5" fill="#2a2a4a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="540" y="192" text-anchor="middle" fill="#4fc3f7" font-size="11" font-weight="bold">Callee Responsibilities</text>
+  <text x="540" y="206" text-anchor="middle" fill="#e0e0e0" font-size="9">Set up frame, do work, tear down frame, RET</text>
+
+  <!-- Key insight -->
+  <text x="400" y="240" text-anchor="middle" fill="#fff176" font-size="10">cdecl: caller cleans up. This allows variadic functions (like printf).</text>
+  <text x="400" y="258" text-anchor="middle" fill="#5c6370" font-size="9">EAX, ECX, EDX are caller-saved (volatile). EBX, ESI, EDI, EBP are callee-saved.</text>
+
+  <!-- Preserved registers note -->
+  <text x="400" y="285" text-anchor="middle" fill="#5c6370" font-size="9">This is the convention used by GCC and most C compilers on x86.</text>
+</svg>

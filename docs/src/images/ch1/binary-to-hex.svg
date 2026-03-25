@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 220" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="680" height="220" fill="#1a1a2e"/>
+
+  <text x="340" y="28" text-anchor="middle" fill="#e0e0e0" font-size="15" font-weight="bold">Binary to Hexadecimal Conversion</text>
+
+  <!-- 16-bit binary number in individual cells -->
+  <!-- Group 1: 1101 -->
+  <rect x="60" y="55" width="32" height="34" rx="3" fill="#2a1a3a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="76" y="77" text-anchor="middle" fill="#ce93d8" font-size="14" font-family="monospace">1</text>
+  <rect x="94" y="55" width="32" height="34" rx="3" fill="#2a1a3a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="110" y="77" text-anchor="middle" fill="#ce93d8" font-size="14" font-family="monospace">1</text>
+  <rect x="128" y="55" width="32" height="34" rx="3" fill="#2a1a3a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="144" y="77" text-anchor="middle" fill="#ce93d8" font-size="14" font-family="monospace">0</text>
+  <rect x="162" y="55" width="32" height="34" rx="3" fill="#2a1a3a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="178" y="77" text-anchor="middle" fill="#ce93d8" font-size="14" font-family="monospace">1</text>
+
+  <!-- Group 2: 0110 -->
+  <rect x="210" y="55" width="32" height="34" rx="3" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="226" y="77" text-anchor="middle" fill="#4fc3f7" font-size="14" font-family="monospace">0</text>
+  <rect x="244" y="55" width="32" height="34" rx="3" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="260" y="77" text-anchor="middle" fill="#4fc3f7" font-size="14" font-family="monospace">1</text>
+  <rect x="278" y="55" width="32" height="34" rx="3" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="294" y="77" text-anchor="middle" fill="#4fc3f7" font-size="14" font-family="monospace">1</text>
+  <rect x="312" y="55" width="32" height="34" rx="3" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="328" y="77" text-anchor="middle" fill="#4fc3f7" font-size="14" font-family="monospace">0</text>
+
+  <!-- Group 3: 1010 -->
+  <rect x="360" y="55" width="32" height="34" rx="3" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="376" y="77" text-anchor="middle" fill="#81c784" font-size="14" font-family="monospace">1</text>
+  <rect x="394" y="55" width="32" height="34" rx="3" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="410" y="77" text-anchor="middle" fill="#81c784" font-size="14" font-family="monospace">0</text>
+  <rect x="428" y="55" width="32" height="34" rx="3" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="444" y="77" text-anchor="middle" fill="#81c784" font-size="14" font-family="monospace">1</text>
+  <rect x="462" y="55" width="32" height="34" rx="3" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="478" y="77" text-anchor="middle" fill="#81c784" font-size="14" font-family="monospace">0</text>
+
+  <!-- Group 4: 1111 -->
+  <rect x="510" y="55" width="32" height="34" rx="3" fill="#2e2a1a" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="526" y="77" text-anchor="middle" fill="#ffb74d" font-size="14" font-family="monospace">1</text>
+  <rect x="544" y="55" width="32" height="34" rx="3" fill="#2e2a1a" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="560" y="77" text-anchor="middle" fill="#ffb74d" font-size="14" font-family="monospace">1</text>
+  <rect x="578" y="55" width="32" height="34" rx="3" fill="#2e2a1a" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="594" y="77" text-anchor="middle" fill="#ffb74d" font-size="14" font-family="monospace">1</text>
+  <rect x="612" y="55" width="32" height="34" rx="3" fill="#2e2a1a" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="628" y="77" text-anchor="middle" fill="#ffb74d" font-size="14" font-family="monospace">1</text>
+
+  <!-- Group brackets and labels -->
+  <text x="127" y="48" text-anchor="middle" fill="#ce93d8" font-size="10">Group 4</text>
+  <text x="277" y="48" text-anchor="middle" fill="#4fc3f7" font-size="10">Group 3</text>
+  <text x="427" y="48" text-anchor="middle" fill="#81c784" font-size="10">Group 2</text>
+  <text x="577" y="48" text-anchor="middle" fill="#ffb74d" font-size="10">Group 1</text>
+
+  <!-- Arrows down -->
+  <line x1="127" y1="93" x2="127" y2="120" stroke="#ce93d8" stroke-width="1.5"/>
+  <line x1="277" y1="93" x2="277" y2="120" stroke="#4fc3f7" stroke-width="1.5"/>
+  <line x1="427" y1="93" x2="427" y2="120" stroke="#81c784" stroke-width="1.5"/>
+  <line x1="577" y1="93" x2="577" y2="120" stroke="#ffb74d" stroke-width="1.5"/>
+
+  <!-- Hex digits -->
+  <rect x="107" y="122" width="40" height="36" rx="6" fill="#2a1a3a" stroke="#ce93d8" stroke-width="2"/>
+  <text x="127" y="146" text-anchor="middle" fill="#ce93d8" font-size="18" font-weight="bold" font-family="monospace">D</text>
+
+  <rect x="257" y="122" width="40" height="36" rx="6" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="277" y="146" text-anchor="middle" fill="#4fc3f7" font-size="18" font-weight="bold" font-family="monospace">6</text>
+
+  <rect x="407" y="122" width="40" height="36" rx="6" fill="#1a2e1a" stroke="#81c784" stroke-width="2"/>
+  <text x="427" y="146" text-anchor="middle" fill="#81c784" font-size="18" font-weight="bold" font-family="monospace">A</text>
+
+  <rect x="557" y="122" width="40" height="36" rx="6" fill="#2e2a1a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="577" y="146" text-anchor="middle" fill="#ffb74d" font-size="18" font-weight="bold" font-family="monospace">F</text>
+
+  <!-- Final result -->
+  <text x="340" y="192" text-anchor="middle" fill="#e0e0e0" font-size="13">Result:</text>
+  <text x="340" y="215" text-anchor="middle" fill="#e0e0e0" font-size="20" font-weight="bold" font-family="monospace">0x<tspan fill="#ce93d8">D</tspan><tspan fill="#4fc3f7">6</tspan><tspan fill="#81c784">A</tspan><tspan fill="#ffb74d">F</tspan></text>
+</svg>

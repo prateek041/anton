@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="720" height="320" fill="#1a1a2e"/>
+
+  <defs>
+    <marker id="sp-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ef5350"/>
+    </marker>
+    <marker id="sp-arr-up" markerWidth="6" markerHeight="8" refX="3" refY="0" orient="auto">
+      <polygon points="0 8, 6 8, 3 0" fill="#81c784"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="360" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">PUSH and POP Operations</text>
+  <text x="360" y="42" text-anchor="middle" fill="#8e99a4" font-size="10">Stack grows downward (toward lower addresses)</text>
+
+  <!-- ===== PUSH side ===== -->
+  <text x="180" y="68" text-anchor="middle" fill="#ef5350" font-size="13" font-weight="bold">PUSH EAX</text>
+
+  <!-- Before -->
+  <text x="100" y="92" text-anchor="middle" fill="#8e99a4" font-size="10">Before</text>
+
+  <text x="50" y="114" fill="#8e99a4" font-size="8">0xFFFC</text>
+  <rect x="80" y="102" width="80" height="24" rx="3" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="120" y="118" text-anchor="middle" fill="#8e99a4" font-size="9">0xAAAA</text>
+
+  <text x="50" y="140" fill="#8e99a4" font-size="8">0xFFF8</text>
+  <rect x="80" y="128" width="80" height="24" rx="3" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="120" y="144" text-anchor="middle" fill="#8e99a4" font-size="9">(empty)</text>
+
+  <!-- ESP arrow before -->
+  <text x="172" y="118" fill="#ef5350" font-size="10" font-weight="bold">&#x2190; ESP</text>
+
+  <!-- After -->
+  <text x="280" y="92" text-anchor="middle" fill="#8e99a4" font-size="10">After</text>
+
+  <text x="230" y="114" fill="#8e99a4" font-size="8">0xFFFC</text>
+  <rect x="260" y="102" width="80" height="24" rx="3" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="300" y="118" text-anchor="middle" fill="#8e99a4" font-size="9">0xAAAA</text>
+
+  <text x="230" y="140" fill="#8e99a4" font-size="8">0xFFF8</text>
+  <rect x="260" y="128" width="80" height="24" rx="3" fill="#1b2a3a" stroke="#ef5350" stroke-width="2"/>
+  <text x="300" y="144" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="bold">EAX val</text>
+
+  <!-- ESP arrow after -->
+  <text x="352" y="144" fill="#ef5350" font-size="10" font-weight="bold">&#x2190; ESP</text>
+
+  <!-- Down arrow showing ESP movement -->
+  <line x1="180" y1="170" x2="180" y2="195" stroke="#ef5350" stroke-width="2" marker-end="url(#sp-arr)"/>
+  <text x="180" y="212" text-anchor="middle" fill="#ef5350" font-size="9">ESP = ESP - 4</text>
+  <text x="180" y="226" text-anchor="middle" fill="#ef5350" font-size="9">then write value</text>
+
+  <!-- ===== POP side ===== -->
+  <text x="540" y="68" text-anchor="middle" fill="#81c784" font-size="13" font-weight="bold">POP EBX</text>
+
+  <!-- Before -->
+  <text x="460" y="92" text-anchor="middle" fill="#8e99a4" font-size="10">Before</text>
+
+  <text x="410" y="114" fill="#8e99a4" font-size="8">0xFFFC</text>
+  <rect x="440" y="102" width="80" height="24" rx="3" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="480" y="118" text-anchor="middle" fill="#8e99a4" font-size="9">0xAAAA</text>
+
+  <text x="410" y="140" fill="#8e99a4" font-size="8">0xFFF8</text>
+  <rect x="440" y="128" width="80" height="24" rx="3" fill="#1b2a3a" stroke="#81c784" stroke-width="2"/>
+  <text x="480" y="144" text-anchor="middle" fill="#81c784" font-size="9" font-weight="bold">0x1234</text>
+
+  <!-- ESP arrow before -->
+  <text x="532" y="144" fill="#81c784" font-size="10" font-weight="bold">&#x2190; ESP</text>
+
+  <!-- After -->
+  <text x="640" y="92" text-anchor="middle" fill="#8e99a4" font-size="10">After</text>
+
+  <text x="590" y="114" fill="#8e99a4" font-size="8">0xFFFC</text>
+  <rect x="620" y="102" width="80" height="24" rx="3" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="660" y="118" text-anchor="middle" fill="#8e99a4" font-size="9">0xAAAA</text>
+
+  <text x="590" y="140" fill="#8e99a4" font-size="8">0xFFF8</text>
+  <rect x="620" y="128" width="80" height="24" rx="3" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="660" y="144" text-anchor="middle" fill="#5c6370" font-size="9">(stale)</text>
+
+  <!-- ESP arrow after -->
+  <text x="712" y="118" fill="#81c784" font-size="10" font-weight="bold">&#x2190; ESP</text>
+
+  <!-- Up arrow showing ESP movement -->
+  <line x1="540" y1="195" x2="540" y2="170" stroke="#81c784" stroke-width="2" marker-end="url(#sp-arr-up)"/>
+  <text x="540" y="212" text-anchor="middle" fill="#81c784" font-size="9">Read value into EBX</text>
+  <text x="540" y="226" text-anchor="middle" fill="#81c784" font-size="9">then ESP = ESP + 4</text>
+
+  <!-- Divider -->
+  <line x1="360" y1="60" x2="360" y2="240" stroke="#3a3a5a" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- High/Low labels -->
+  <text x="360" y="270" text-anchor="middle" fill="#8e99a4" font-size="9">Higher addresses at top. Stack grows downward.</text>
+  <text x="360" y="286" text-anchor="middle" fill="#fff176" font-size="9">PUSH: decrement ESP, then write. POP: read, then increment ESP.</text>
+  <text x="360" y="306" text-anchor="middle" fill="#5c6370" font-size="9">POP doesn't erase the old value; it just moves ESP past it.</text>
+</svg>

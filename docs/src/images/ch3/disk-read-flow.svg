@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 320" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="750" height="320" fill="#1a1a2e"/>
+
+  <defs>
+    <marker id="disk-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#fff176"/>
+    </marker>
+  </defs>
+
+  <text x="375" y="22" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">INT 0x13: Disk Read Flow</text>
+
+  <!-- Disk icon -->
+  <rect x="30" y="60" width="160" height="190" rx="8" fill="#1b2a3a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="110" y="85" text-anchor="middle" fill="#ffb74d" font-size="12" font-weight="bold">Disk (DL=0x80)</text>
+
+  <ellipse cx="110" cy="120" rx="50" ry="18" fill="none" stroke="#8e99a4" stroke-width="1.5"/>
+  <ellipse cx="110" cy="120" rx="20" ry="7" fill="none" stroke="#8e99a4" stroke-width="1"/>
+
+  <rect x="50" y="150" width="120" height="22" rx="3" fill="#3a2a1a" stroke="#ffb74d" stroke-width="1"/>
+  <text x="110" y="165" text-anchor="middle" fill="#ffb74d" font-size="8">Sector 2 (CL=2)</text>
+
+  <rect x="50" y="175" width="120" height="22" rx="3" fill="#3a2a1a" stroke="#ffb74d" stroke-width="1"/>
+  <text x="110" y="190" text-anchor="middle" fill="#ffb74d" font-size="8">Sector 3</text>
+
+  <rect x="50" y="200" width="120" height="22" rx="3" fill="#3a2a1a" stroke="#ffb74d" stroke-width="1"/>
+  <text x="110" y="215" text-anchor="middle" fill="#ffb74d" font-size="8">Sector 4</text>
+
+  <text x="110" y="243" text-anchor="middle" fill="#8e99a4" font-size="8">CH=0, DH=0</text>
+
+  <!-- Arrow from disk to BIOS -->
+  <line x1="190" y1="155" x2="258" y2="155" stroke="#fff176" stroke-width="2" marker-end="url(#disk-arr)"/>
+  <text x="224" y="147" text-anchor="middle" fill="#fff176" font-size="8">read</text>
+
+  <!-- BIOS ROM box -->
+  <rect x="260" y="80" width="170" height="160" rx="8" fill="#2a2a4a" stroke="#ce93d8" stroke-width="2"/>
+  <text x="345" y="105" text-anchor="middle" fill="#ce93d8" font-size="12" font-weight="bold">BIOS ROM</text>
+  <text x="345" y="125" text-anchor="middle" fill="#e0e0e0" font-size="10">INT 0x13 Handler</text>
+
+  <rect x="280" y="140" width="130" height="50" rx="4" fill="#1b2a3a" stroke="#ce93d8" stroke-width="1"/>
+  <text x="345" y="158" text-anchor="middle" fill="#e0e0e0" font-size="8">1. Programs DMA</text>
+  <text x="345" y="172" text-anchor="middle" fill="#e0e0e0" font-size="8">2. Reads disk controller</text>
+  <text x="345" y="186" text-anchor="middle" fill="#e0e0e0" font-size="8">3. Copies data to RAM</text>
+
+  <text x="345" y="218" text-anchor="middle" fill="#e0e0e0" font-size="9">AH=0x02, AL=3</text>
+  <text x="345" y="232" text-anchor="middle" fill="#8e99a4" font-size="8">(read 3 sectors)</text>
+
+  <!-- Arrow from BIOS to RAM -->
+  <line x1="430" y1="155" x2="498" y2="155" stroke="#fff176" stroke-width="2" marker-end="url(#disk-arr)"/>
+  <text x="464" y="147" text-anchor="middle" fill="#fff176" font-size="8">copy</text>
+
+  <!-- RAM block -->
+  <rect x="500" y="50" width="220" height="230" rx="8" fill="#1b2a3a" stroke="#81c784" stroke-width="2"/>
+  <text x="610" y="75" text-anchor="middle" fill="#81c784" font-size="12" font-weight="bold">RAM</text>
+
+  <!-- Address regions -->
+  <rect x="520" y="85" width="180" height="25" rx="3" fill="#2a2a4a" stroke="#8e99a4" stroke-width="1"/>
+  <text x="610" y="102" text-anchor="middle" fill="#8e99a4" font-size="8">0x0000 - Low memory</text>
+
+  <rect x="520" y="115" width="180" height="25" rx="3" fill="#2a2a4a" stroke="#8e99a4" stroke-width="1"/>
+  <text x="610" y="132" text-anchor="middle" fill="#8e99a4" font-size="8">0x7C00 - Boot sector loaded here</text>
+
+  <!-- Target buffer highlighted -->
+  <rect x="520" y="148" width="180" height="70" rx="5" fill="#1b3a2a" stroke="#81c784" stroke-width="2.5"/>
+  <text x="610" y="168" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">ES:BX = 0x1000</text>
+  <text x="610" y="185" text-anchor="middle" fill="#e0e0e0" font-size="9">Destination buffer</text>
+  <text x="610" y="200" text-anchor="middle" fill="#e0e0e0" font-size="8">3 sectors x 512 = 1536 bytes</text>
+  <text x="610" y="212" text-anchor="middle" fill="#81c784" font-size="8">YOUR KERNEL CODE HERE</text>
+
+  <rect x="520" y="225" width="180" height="25" rx="3" fill="#2a2a4a" stroke="#8e99a4" stroke-width="1"/>
+  <text x="610" y="242" text-anchor="middle" fill="#8e99a4" font-size="8">... rest of RAM ...</text>
+
+  <!-- Bottom note -->
+  <rect x="60" y="275" width="630" height="35" rx="5" fill="#2a2a4a" stroke="#fff176" stroke-width="1.5"/>
+  <text x="375" y="295" text-anchor="middle" fill="#fff176" font-size="10">The bootloader uses INT 0x13 to load the kernel into RAM, then jumps to it.</text>
+  <text x="375" y="308" text-anchor="middle" fill="#8e99a4" font-size="8">This is the first thing Anton's bootloader does after setting up segments and the stack.</text>
+</svg>

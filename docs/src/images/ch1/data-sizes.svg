@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="700" height="340" fill="#1a1a2e"/>
+
+  <text x="350" y="28" text-anchor="middle" fill="#e0e0e0" font-size="15" font-weight="bold">Data Size Units</text>
+
+  <!-- Bit: 1 cell -->
+  <rect x="50" y="50" width="28" height="30" rx="3" fill="#2a1a3a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="64" y="70" text-anchor="middle" fill="#ce93d8" font-size="10" font-family="monospace">1</text>
+  <text x="100" y="70" fill="#ce93d8" font-size="13" font-weight="bold">Bit</text>
+  <text x="200" y="70" fill="#8e99a4" font-size="11">1 binary digit (0 or 1)</text>
+
+  <!-- Nibble: 4 cells -->
+  <rect x="50" y="95" width="28" height="30" rx="3" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <rect x="80" y="95" width="28" height="30" rx="3" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <rect x="110" y="95" width="28" height="30" rx="3" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <rect x="140" y="95" width="28" height="30" rx="3" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="200" y="115" fill="#4fc3f7" font-size="13" font-weight="bold">Nibble</text>
+  <text x="270" y="115" fill="#8e99a4" font-size="11">4 bits = 1 hex digit (0-F)</text>
+
+  <!-- Byte: 8 cells -->
+  <rect x="50" y="140" width="28" height="30" rx="3" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <rect x="80" y="140" width="28" height="30" rx="3" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <rect x="110" y="140" width="28" height="30" rx="3" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <rect x="140" y="140" width="28" height="30" rx="3" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <rect x="170" y="140" width="28" height="30" rx="3" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <rect x="200" y="140" width="28" height="30" rx="3" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <rect x="230" y="140" width="28" height="30" rx="3" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <rect x="260" y="140" width="28" height="30" rx="3" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="310" y="160" fill="#81c784" font-size="13" font-weight="bold">Byte</text>
+  <text x="360" y="160" fill="#8e99a4" font-size="11">8 bits = 2 hex digits (0x00-0xFF)</text>
+
+  <!-- Word: 16 cells (draw as 2 groups of 8) -->
+  <rect x="50" y="185" width="240" height="30" rx="3" fill="none" stroke="#ffb74d" stroke-width="1.5"/>
+  <line x1="170" y1="185" x2="170" y2="215" stroke="#ffb74d" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <text x="170" y="205" text-anchor="middle" fill="#ffb74d" font-size="10">16 bits</text>
+  <text x="310" y="205" fill="#ffb74d" font-size="13" font-weight="bold">Word</text>
+  <text x="360" y="205" fill="#8e99a4" font-size="11">16 bits = 2 bytes</text>
+
+  <!-- Doubleword: 32 bits -->
+  <rect x="50" y="230" width="480" height="30" rx="3" fill="none" stroke="#ef5350" stroke-width="1.5"/>
+  <line x1="170" y1="230" x2="170" y2="260" stroke="#ef5350" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <line x1="290" y1="230" x2="290" y2="260" stroke="#ef5350" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <line x1="410" y1="230" x2="410" y2="260" stroke="#ef5350" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <text x="290" y="250" text-anchor="middle" fill="#ef5350" font-size="10">32 bits</text>
+  <text x="550" y="250" fill="#ef5350" font-size="13" font-weight="bold">Doubleword</text>
+  <text x="20" y="250" text-anchor="end" fill="#8e99a4" font-size="9">x86-32</text>
+
+  <!-- Quadword: 64 bits -->
+  <rect x="50" y="275" width="600" height="30" rx="3" fill="none" stroke="#fff176" stroke-width="1.5"/>
+  <text x="350" y="295" text-anchor="middle" fill="#fff176" font-size="10">64 bits</text>
+  <text x="20" y="295" text-anchor="end" fill="#8e99a4" font-size="9">x86-64</text>
+
+  <!-- Right-side labels for dword and qword -->
+  <text x="350" y="325" text-anchor="middle" fill="#8e99a4" font-size="11">Doubleword = 4 bytes (32-bit register)</text>
+  <text x="350" y="338" text-anchor="middle" fill="#8e99a4" font-size="11">Quadword = 8 bytes (64-bit register)</text>
+</svg>

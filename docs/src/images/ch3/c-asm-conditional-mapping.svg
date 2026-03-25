@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 340" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="750" height="340" fill="#1a1a2e"/>
+
+  <defs>
+    <marker id="cond-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#fff176"/>
+    </marker>
+  </defs>
+
+  <text x="375" y="22" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">C Conditionals to Assembly Mapping</text>
+
+  <!-- C Code Column -->
+  <rect x="30" y="40" width="280" height="28" rx="5" fill="#1b3a2a" stroke="#81c784" stroke-width="2"/>
+  <text x="170" y="60" text-anchor="middle" fill="#81c784" font-size="12" font-weight="bold">C Source</text>
+
+  <rect x="30" y="78" width="280" height="220" rx="6" fill="#1b2a3a" stroke="#81c784" stroke-width="1.5"/>
+
+  <text x="50" y="102" fill="#ce93d8" font-size="12" font-family="monospace">int classify(int n) {</text>
+  <text x="50" y="132" fill="#4fc3f7" font-size="12" font-family="monospace">  if (n == 0)</text>
+  <text x="50" y="154" fill="#e0e0e0" font-size="12" font-family="monospace">    return 0;</text>
+  <text x="50" y="188" fill="#ffb74d" font-size="12" font-family="monospace">  if (n &lt; 0)</text>
+  <text x="50" y="210" fill="#e0e0e0" font-size="12" font-family="monospace">    return -1;</text>
+  <text x="50" y="244" fill="#ef5350" font-size="12" font-family="monospace">  return 1;</text>
+  <text x="50" y="278" fill="#ce93d8" font-size="12" font-family="monospace">}</text>
+
+  <!-- Assembly Column -->
+  <rect x="440" y="40" width="280" height="28" rx="5" fill="#3a1b2a" stroke="#ef5350" stroke-width="2"/>
+  <text x="580" y="60" text-anchor="middle" fill="#ef5350" font-size="12" font-weight="bold">x86 Assembly</text>
+
+  <rect x="440" y="78" width="280" height="250" rx="6" fill="#1b2a3a" stroke="#ef5350" stroke-width="1.5"/>
+
+  <text x="460" y="102" fill="#ce93d8" font-size="11" font-family="monospace">classify:</text>
+  <text x="460" y="122" fill="#4fc3f7" font-size="11" font-family="monospace">  test eax, eax</text>
+  <text x="460" y="140" fill="#4fc3f7" font-size="11" font-family="monospace">  jz .is_zero</text>
+  <text x="460" y="168" fill="#ffb74d" font-size="11" font-family="monospace">  js .is_negative</text>
+  <text x="460" y="196" fill="#ef5350" font-size="11" font-family="monospace">  mov eax, 1</text>
+  <text x="460" y="214" fill="#ef5350" font-size="11" font-family="monospace">  ret</text>
+  <text x="460" y="240" fill="#4fc3f7" font-size="11" font-family="monospace">.is_zero:</text>
+  <text x="460" y="258" fill="#4fc3f7" font-size="11" font-family="monospace">  xor eax, eax</text>
+  <text x="460" y="276" fill="#4fc3f7" font-size="11" font-family="monospace">  ret</text>
+  <text x="460" y="296" fill="#ffb74d" font-size="11" font-family="monospace">.is_negative:</text>
+  <text x="460" y="314" fill="#ffb74d" font-size="11" font-family="monospace">  mov eax, -1</text>
+  <text x="460" y="330" fill="#ffb74d" font-size="11" font-family="monospace">  ret</text>
+
+  <!-- Connecting arrows -->
+  <!-- n == 0 -> test + jz -->
+  <line x1="310" y1="128" x2="440" y2="122" stroke="#4fc3f7" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="310" y1="128" x2="440" y2="140" stroke="#4fc3f7" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- n < 0 -> js -->
+  <line x1="310" y1="184" x2="440" y2="168" stroke="#ffb74d" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- return 1 -> mov eax, 1 -->
+  <line x1="310" y1="240" x2="440" y2="196" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Annotation -->
+  <text x="375" y="340" text-anchor="middle" fill="#8e99a4" font-size="9">test eax, eax sets ZF and SF without modifying eax. Conditional jumps read the flags.</text>
+</svg>

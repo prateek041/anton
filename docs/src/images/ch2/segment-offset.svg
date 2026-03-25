@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 260" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="700" height="260" fill="#1a1a2e"/>
+
+  <defs>
+    <marker id="so-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e0e0e0"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">Real Mode: Segment:Offset Addressing</text>
+
+  <!-- Segment register -->
+  <rect x="30" y="55" width="130" height="40" rx="5" fill="#1b2a3a" stroke="#ce93d8" stroke-width="2"/>
+  <text x="95" y="70" text-anchor="middle" fill="#ce93d8" font-size="10">Segment Register</text>
+  <text x="95" y="86" text-anchor="middle" fill="#ce93d8" font-size="14" font-weight="bold">0x0700</text>
+
+  <!-- x16 shift -->
+  <line x1="160" y1="75" x2="200" y2="75" stroke="#e0e0e0" stroke-width="2" marker-end="url(#so-arr)"/>
+  <text x="180" y="66" text-anchor="middle" fill="#fff176" font-size="10" font-weight="bold">x 16</text>
+  <text x="180" y="96" text-anchor="middle" fill="#8e99a4" font-size="8">(shift left 4)</text>
+
+  <!-- Shifted result -->
+  <rect x="205" y="55" width="140" height="40" rx="5" fill="#1b2a3a" stroke="#ce93d8" stroke-width="2"/>
+  <text x="275" y="70" text-anchor="middle" fill="#8e99a4" font-size="10">Segment Base</text>
+  <text x="275" y="86" text-anchor="middle" fill="#ce93d8" font-size="14" font-weight="bold">0x07000</text>
+
+  <!-- Plus sign -->
+  <text x="365" y="82" text-anchor="middle" fill="#e0e0e0" font-size="20" font-weight="bold">+</text>
+
+  <!-- Offset -->
+  <rect x="390" y="55" width="130" height="40" rx="5" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="455" y="70" text-anchor="middle" fill="#4fc3f7" font-size="10">Offset</text>
+  <text x="455" y="86" text-anchor="middle" fill="#4fc3f7" font-size="14" font-weight="bold">0x1234</text>
+
+  <!-- Equals -->
+  <text x="540" y="82" text-anchor="middle" fill="#e0e0e0" font-size="20" font-weight="bold">=</text>
+
+  <!-- Physical address -->
+  <rect x="560" y="55" width="120" height="40" rx="5" fill="#1a2e1a" stroke="#81c784" stroke-width="2.5"/>
+  <text x="620" y="70" text-anchor="middle" fill="#81c784" font-size="10">Physical Address</text>
+  <text x="620" y="86" text-anchor="middle" fill="#81c784" font-size="14" font-weight="bold">0x08234</text>
+
+  <!-- 1 MB address bar -->
+  <text x="350" y="130" text-anchor="middle" fill="#e0e0e0" font-size="11">1 MB Address Space (20-bit)</text>
+
+  <rect x="50" y="140" width="600" height="28" rx="4" fill="#1b2a3a" stroke="#3a3a5a" stroke-width="1"/>
+
+  <!-- 0x00000 label -->
+  <text x="50" y="184" text-anchor="middle" fill="#8e99a4" font-size="9">0x00000</text>
+
+  <!-- Segment start marker -->
+  <rect x="178" y="142" width="120" height="24" rx="2" fill="#2a1a3a" stroke="#ce93d8" stroke-width="1.5" opacity="0.5"/>
+  <text x="238" y="158" text-anchor="middle" fill="#ce93d8" font-size="8">Segment 0x0700</text>
+  <line x1="178" y1="170" x2="178" y2="184" stroke="#ce93d8" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="178" y="194" text-anchor="middle" fill="#ce93d8" font-size="8">0x07000</text>
+
+  <!-- Target address marker -->
+  <rect x="207" y="143" width="4" height="22" fill="#81c784"/>
+  <line x1="209" y1="170" x2="209" y2="210" stroke="#81c784" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="209" y="222" text-anchor="middle" fill="#81c784" font-size="9" font-weight="bold">0x08234</text>
+
+  <!-- FFFFF label -->
+  <text x="650" y="184" text-anchor="middle" fill="#8e99a4" font-size="9">0xFFFFF</text>
+
+  <text x="350" y="250" text-anchor="middle" fill="#5c6370" font-size="10">Maximum reachable: segment 0xFFFF x 16 + offset 0xFFFF = 0x10FFEF (just over 1 MB).</text>
+</svg>

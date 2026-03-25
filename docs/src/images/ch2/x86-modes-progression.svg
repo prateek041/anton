@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="760" height="220" fill="#1a1a2e"/>
+
+  <defs>
+    <marker id="mp-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e0e0e0"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">x86 CPU Mode Progression</text>
+
+  <!-- Real Mode box -->
+  <rect x="30" y="50" width="200" height="80" rx="10" fill="#1a1a2e" stroke="#ce93d8" stroke-width="2.5"/>
+  <text x="130" y="75" text-anchor="middle" fill="#ce93d8" font-size="14" font-weight="bold">Real Mode</text>
+  <text x="130" y="95" text-anchor="middle" fill="#e0e0e0" font-size="11">16-bit registers</text>
+  <text x="130" y="112" text-anchor="middle" fill="#8e99a4" font-size="10">1 MB address space</text>
+
+  <!-- Arrow 1 -->
+  <line x1="230" y1="90" x2="278" y2="90" stroke="#e0e0e0" stroke-width="2" marker-end="url(#mp-arr)"/>
+  <text x="254" y="80" text-anchor="middle" fill="#fff176" font-size="8" font-weight="bold">Set PE bit</text>
+  <text x="254" y="108" text-anchor="middle" fill="#fff176" font-size="8">in CR0</text>
+
+  <!-- Protected Mode box -->
+  <rect x="280" y="50" width="200" height="80" rx="10" fill="#1a1a2e" stroke="#4fc3f7" stroke-width="2.5"/>
+  <text x="380" y="75" text-anchor="middle" fill="#4fc3f7" font-size="14" font-weight="bold">Protected Mode</text>
+  <text x="380" y="95" text-anchor="middle" fill="#e0e0e0" font-size="11">32-bit registers</text>
+  <text x="380" y="112" text-anchor="middle" fill="#8e99a4" font-size="10">4 GB + Paging + Rings</text>
+
+  <!-- Arrow 2 -->
+  <line x1="480" y1="90" x2="528" y2="90" stroke="#e0e0e0" stroke-width="2" marker-end="url(#mp-arr)"/>
+  <text x="504" y="80" text-anchor="middle" fill="#fff176" font-size="8" font-weight="bold">Set LME</text>
+  <text x="504" y="108" text-anchor="middle" fill="#fff176" font-size="8">+ PG in CR0</text>
+
+  <!-- Long Mode box -->
+  <rect x="530" y="50" width="200" height="80" rx="10" fill="#1a1a2e" stroke="#81c784" stroke-width="2.5"/>
+  <text x="630" y="75" text-anchor="middle" fill="#81c784" font-size="14" font-weight="bold">Long Mode</text>
+  <text x="630" y="95" text-anchor="middle" fill="#e0e0e0" font-size="11">64-bit registers</text>
+  <text x="630" y="112" text-anchor="middle" fill="#8e99a4" font-size="10">Vast address space</text>
+
+  <!-- Phase labels below -->
+  <rect x="60" y="148" width="140" height="24" rx="4" fill="#2a1a3a" stroke="#ce93d8" stroke-width="1"/>
+  <text x="130" y="164" text-anchor="middle" fill="#ce93d8" font-size="10" font-weight="bold">Phase 1: Bootloader</text>
+
+  <rect x="295" y="148" width="170" height="24" rx="4" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1"/>
+  <text x="380" y="164" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">Phases 2-10: Kernel</text>
+
+  <rect x="560" y="148" width="140" height="24" rx="4" fill="#1a2e1a" stroke="#81c784" stroke-width="1"/>
+  <text x="630" y="164" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">Phase 11: 64-bit</text>
+
+  <!-- Lines connecting boxes to labels -->
+  <line x1="130" y1="130" x2="130" y2="148" stroke="#ce93d8" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="380" y1="130" x2="380" y2="148" stroke="#4fc3f7" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="630" y1="130" x2="630" y2="148" stroke="#81c784" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <text x="380" y="200" text-anchor="middle" fill="#5c6370" font-size="10">You cannot skip ahead. Every x86 OS must walk this path.</text>
+</svg>

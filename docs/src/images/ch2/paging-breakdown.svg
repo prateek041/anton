@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 340" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="750" height="340" fill="#1a1a2e"/>
+
+  <defs>
+    <marker id="pb-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e0e0e0"/>
+    </marker>
+    <marker id="pb-arr-down" markerWidth="6" markerHeight="8" refX="3" refY="7" orient="auto">
+      <polygon points="0 0, 6 0, 3 8" fill="#e0e0e0"/>
+    </marker>
+  </defs>
+
+  <text x="375" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">32-bit Paging: Linear Address Breakdown</text>
+
+  <!-- Linear address bar with bit fields -->
+  <rect x="75" y="45" width="600" height="40" rx="5" fill="#1b2a3a" stroke="#e0e0e0" stroke-width="2"/>
+
+  <!-- Directory index (bits 31-22) -->
+  <rect x="76" y="47" width="200" height="36" rx="3" fill="#2a1a3a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="176" y="63" text-anchor="middle" fill="#ce93d8" font-size="11" font-weight="bold">Directory Index</text>
+  <text x="176" y="78" text-anchor="middle" fill="#ce93d8" font-size="9">10 bits (bits 31-22)</text>
+
+  <!-- Table index (bits 21-12) -->
+  <rect x="276" y="47" width="200" height="36" rx="3" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="376" y="63" text-anchor="middle" fill="#4fc3f7" font-size="11" font-weight="bold">Table Index</text>
+  <text x="376" y="78" text-anchor="middle" fill="#4fc3f7" font-size="9">10 bits (bits 21-12)</text>
+
+  <!-- Offset (bits 11-0) -->
+  <rect x="476" y="47" width="198" height="36" rx="3" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="575" y="63" text-anchor="middle" fill="#81c784" font-size="11" font-weight="bold">Page Offset</text>
+  <text x="575" y="78" text-anchor="middle" fill="#81c784" font-size="9">12 bits (bits 11-0)</text>
+
+  <!-- Arrows going down from each field -->
+  <line x1="176" y1="85" x2="176" y2="120" stroke="#ce93d8" stroke-width="2" marker-end="url(#pb-arr-down)"/>
+  <line x1="376" y1="85" x2="376" y2="120" stroke="#4fc3f7" stroke-width="2" marker-end="url(#pb-arr-down)"/>
+  <line x1="575" y1="85" x2="575" y2="250" stroke="#81c784" stroke-width="2" stroke-dasharray="4,3"/>
+
+  <!-- CR3 -->
+  <rect x="20" y="130" width="80" height="34" rx="5" fill="#1b2a3a" stroke="#ef5350" stroke-width="2"/>
+  <text x="60" y="151" text-anchor="middle" fill="#ef5350" font-size="11" font-weight="bold">CR3</text>
+  <line x1="100" y1="147" x2="125" y2="147" stroke="#e0e0e0" stroke-width="2" marker-end="url(#pb-arr)"/>
+
+  <!-- Page Directory -->
+  <rect x="128" y="125" width="96" height="120" rx="5" fill="#1b2a3a" stroke="#ce93d8" stroke-width="2"/>
+  <text x="176" y="143" text-anchor="middle" fill="#ce93d8" font-size="10" font-weight="bold">Page</text>
+  <text x="176" y="155" text-anchor="middle" fill="#ce93d8" font-size="10" font-weight="bold">Directory</text>
+  <rect x="138" y="165" width="76" height="14" rx="2" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="176" y="175" text-anchor="middle" fill="#8e99a4" font-size="8">[0]</text>
+  <rect x="138" y="181" width="76" height="14" rx="2" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="176" y="191" text-anchor="middle" fill="#8e99a4" font-size="8">[1]</text>
+  <rect x="138" y="197" width="76" height="14" rx="2" fill="#2a1a3a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="176" y="207" text-anchor="middle" fill="#ce93d8" font-size="8" font-weight="bold">[n]</text>
+  <rect x="138" y="213" width="76" height="14" rx="2" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="176" y="223" text-anchor="middle" fill="#8e99a4" font-size="8">...</text>
+  <text x="176" y="243" text-anchor="middle" fill="#8e99a4" font-size="8">1024 entries</text>
+
+  <!-- Arrow from PD to PT -->
+  <line x1="224" y1="204" x2="320" y2="204" stroke="#e0e0e0" stroke-width="2" marker-end="url(#pb-arr)"/>
+
+  <!-- Page Table -->
+  <rect x="328" y="125" width="96" height="120" rx="5" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="376" y="143" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">Page</text>
+  <text x="376" y="155" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">Table</text>
+  <rect x="338" y="165" width="76" height="14" rx="2" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="376" y="175" text-anchor="middle" fill="#8e99a4" font-size="8">[0]</text>
+  <rect x="338" y="181" width="76" height="14" rx="2" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="376" y="191" text-anchor="middle" fill="#8e99a4" font-size="8">[1]</text>
+  <rect x="338" y="197" width="76" height="14" rx="2" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="376" y="207" text-anchor="middle" fill="#4fc3f7" font-size="8" font-weight="bold">[m]</text>
+  <rect x="338" y="213" width="76" height="14" rx="2" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="376" y="223" text-anchor="middle" fill="#8e99a4" font-size="8">...</text>
+  <text x="376" y="243" text-anchor="middle" fill="#8e99a4" font-size="8">1024 entries</text>
+
+  <!-- Arrow from PT to Physical Frame -->
+  <line x1="424" y1="204" x2="500" y2="265" stroke="#e0e0e0" stroke-width="2" marker-end="url(#pb-arr)"/>
+
+  <!-- Physical frame + offset -->
+  <rect x="505" y="255" width="220" height="50" rx="6" fill="#1a2e1a" stroke="#81c784" stroke-width="2.5"/>
+  <rect x="506" y="257" width="140" height="46" rx="3" fill="#1a3a1a"/>
+  <text x="576" y="278" text-anchor="middle" fill="#fff176" font-size="10" font-weight="bold">Physical Frame</text>
+  <text x="576" y="293" text-anchor="middle" fill="#fff176" font-size="9">(from PT entry)</text>
+  <rect x="646" y="257" width="78" height="46" rx="3" fill="#1a2e1a"/>
+  <text x="685" y="278" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">Offset</text>
+  <text x="685" y="293" text-anchor="middle" fill="#81c784" font-size="9">(12 bits)</text>
+
+  <text x="615" y="325" text-anchor="middle" fill="#81c784" font-size="11" font-weight="bold">= Physical Address</text>
+
+  <!-- Capacity note -->
+  <text x="375" y="337" text-anchor="middle" fill="#5c6370" font-size="9">1024 x 1024 x 4 KB = 4 GB addressable with 32-bit paging.</text>
+</svg>

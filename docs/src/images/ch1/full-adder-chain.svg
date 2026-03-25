@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="760" height="300" fill="#1a1a2e"/>
+
+  <text x="380" y="24" text-anchor="middle" fill="#e0e0e0" font-size="15" font-weight="bold">4-Bit Adder (Chain of Full-Adders)</text>
+
+  <!-- Full-Adder template: x offset for each -->
+  <!-- FA 0 (rightmost, bit 0) at x=570 -->
+  <!-- FA 1 at x=400 -->
+  <!-- FA 2 at x=230 -->
+  <!-- FA 3 at x=60 -->
+
+  <!-- Carry-in 0 -->
+  <text x="720" y="170" fill="#8e99a4" font-size="10">C_in = 0</text>
+  <line x1="710" y1="175" x2="690" y2="175" stroke="#8e99a4" stroke-width="1.5"/>
+
+  <!-- FA Bit 0 -->
+  <rect x="570" y="80" width="120" height="130" rx="8" fill="#1a1a2e" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="630" y="105" text-anchor="middle" fill="#4fc3f7" font-size="13" font-weight="bold">Full Adder</text>
+  <text x="630" y="120" text-anchor="middle" fill="#5c6370" font-size="10">Bit 0</text>
+  <!-- Inputs -->
+  <text x="630" y="145" text-anchor="middle" fill="#e0e0e0" font-size="10">A0  B0</text>
+  <!-- Outputs -->
+  <text x="600" y="195" fill="#81c784" font-size="10">S0</text>
+  <line x1="605" y1="210" x2="605" y2="240" stroke="#81c784" stroke-width="2"/>
+  <!-- Carry out -->
+  <line x1="570" y1="175" x2="540" y2="175" stroke="#ef5350" stroke-width="2"/>
+
+  <!-- FA Bit 1 -->
+  <rect x="400" y="80" width="120" height="130" rx="8" fill="#1a1a2e" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="460" y="105" text-anchor="middle" fill="#4fc3f7" font-size="13" font-weight="bold">Full Adder</text>
+  <text x="460" y="120" text-anchor="middle" fill="#5c6370" font-size="10">Bit 1</text>
+  <text x="460" y="145" text-anchor="middle" fill="#e0e0e0" font-size="10">A1  B1</text>
+  <text x="430" y="195" fill="#81c784" font-size="10">S1</text>
+  <line x1="435" y1="210" x2="435" y2="240" stroke="#81c784" stroke-width="2"/>
+  <!-- Carry in from Bit 0 -->
+  <line x1="540" y1="175" x2="520" y2="175" stroke="#ef5350" stroke-width="2"/>
+  <text x="542" y="168" fill="#ef5350" font-size="8">C</text>
+  <!-- Carry out -->
+  <line x1="400" y1="175" x2="370" y2="175" stroke="#ef5350" stroke-width="2"/>
+
+  <!-- FA Bit 2 -->
+  <rect x="230" y="80" width="120" height="130" rx="8" fill="#1a1a2e" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="290" y="105" text-anchor="middle" fill="#4fc3f7" font-size="13" font-weight="bold">Full Adder</text>
+  <text x="290" y="120" text-anchor="middle" fill="#5c6370" font-size="10">Bit 2</text>
+  <text x="290" y="145" text-anchor="middle" fill="#e0e0e0" font-size="10">A2  B2</text>
+  <text x="260" y="195" fill="#81c784" font-size="10">S2</text>
+  <line x1="265" y1="210" x2="265" y2="240" stroke="#81c784" stroke-width="2"/>
+  <line x1="370" y1="175" x2="350" y2="175" stroke="#ef5350" stroke-width="2"/>
+  <text x="372" y="168" fill="#ef5350" font-size="8">C</text>
+  <line x1="230" y1="175" x2="200" y2="175" stroke="#ef5350" stroke-width="2"/>
+
+  <!-- FA Bit 3 -->
+  <rect x="60" y="80" width="120" height="130" rx="8" fill="#1a1a2e" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="120" y="105" text-anchor="middle" fill="#4fc3f7" font-size="13" font-weight="bold">Full Adder</text>
+  <text x="120" y="120" text-anchor="middle" fill="#5c6370" font-size="10">Bit 3</text>
+  <text x="120" y="145" text-anchor="middle" fill="#e0e0e0" font-size="10">A3  B3</text>
+  <text x="90" y="195" fill="#81c784" font-size="10">S3</text>
+  <line x1="95" y1="210" x2="95" y2="240" stroke="#81c784" stroke-width="2"/>
+  <line x1="200" y1="175" x2="180" y2="175" stroke="#ef5350" stroke-width="2"/>
+  <text x="202" y="168" fill="#ef5350" font-size="8">C</text>
+  <!-- Final carry out -->
+  <line x1="60" y1="175" x2="25" y2="175" stroke="#ef5350" stroke-width="2"/>
+  <text x="20" y="170" text-anchor="end" fill="#ef5350" font-size="10">C_out</text>
+
+  <!-- Sum output labels -->
+  <text x="95" y="258" text-anchor="middle" fill="#81c784" font-size="12" font-weight="bold">S3</text>
+  <text x="265" y="258" text-anchor="middle" fill="#81c784" font-size="12" font-weight="bold">S2</text>
+  <text x="435" y="258" text-anchor="middle" fill="#81c784" font-size="12" font-weight="bold">S1</text>
+  <text x="605" y="258" text-anchor="middle" fill="#81c784" font-size="12" font-weight="bold">S0</text>
+
+  <!-- Carry chain label -->
+  <text x="380" y="290" text-anchor="middle" fill="#ef5350" font-size="11">Carry propagates from Bit 0 to Bit 3 (right to left)</text>
+</svg>

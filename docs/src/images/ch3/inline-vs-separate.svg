@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 380" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="750" height="380" fill="#1a1a2e"/>
+
+  <text x="375" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">Inline Assembly vs. Separate .asm Files</text>
+
+  <!-- Inline column -->
+  <rect x="30" y="45" width="320" height="32" rx="5" fill="#1b3a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="190" y="67" text-anchor="middle" fill="#4fc3f7" font-size="12" font-weight="bold">Inline Assembly</text>
+
+  <rect x="30" y="85" width="320" height="180" rx="6" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+
+  <circle cx="55" cy="110" r="4" fill="#4fc3f7"/>
+  <text x="68" y="114" fill="#e0e0e0" font-size="10">1-5 instructions, one-liners</text>
+
+  <circle cx="55" cy="134" r="4" fill="#4fc3f7"/>
+  <text x="68" y="138" fill="#e0e0e0" font-size="10">Lives inside C header files</text>
+
+  <circle cx="55" cy="158" r="4" fill="#4fc3f7"/>
+  <text x="68" y="162" fill="#e0e0e0" font-size="10">Compiler can optimize around it</text>
+
+  <circle cx="55" cy="182" r="4" fill="#4fc3f7"/>
+  <text x="68" y="186" fill="#e0e0e0" font-size="10">GCC constraint syntax required</text>
+
+  <circle cx="55" cy="206" r="4" fill="#4fc3f7"/>
+  <text x="68" y="210" fill="#e0e0e0" font-size="10">No separate build step</text>
+
+  <text x="50" y="245" fill="#fff176" font-size="10" font-weight="bold">Examples in Anton:</text>
+  <text x="50" y="260" fill="#e0e0e0" font-size="9" font-family="monospace">outb, inb, cli, sti, hlt</text>
+
+  <!-- Separate file column -->
+  <rect x="400" y="45" width="320" height="32" rx="5" fill="#3a2a1a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="560" y="67" text-anchor="middle" fill="#ffb74d" font-size="12" font-weight="bold">Separate .asm File</text>
+
+  <rect x="400" y="85" width="320" height="180" rx="6" fill="#1b2a3a" stroke="#ffb74d" stroke-width="1.5"/>
+
+  <circle cx="425" cy="110" r="4" fill="#ffb74d"/>
+  <text x="438" y="114" fill="#e0e0e0" font-size="10">10+ instructions, complex logic</text>
+
+  <circle cx="425" cy="134" r="4" fill="#ffb74d"/>
+  <text x="438" y="138" fill="#e0e0e0" font-size="10">Full NASM syntax (cleaner, easier)</text>
+
+  <circle cx="425" cy="158" r="4" fill="#ffb74d"/>
+  <text x="438" y="162" fill="#e0e0e0" font-size="10">Linked via GLOBAL / EXTERN</text>
+
+  <circle cx="425" cy="182" r="4" fill="#ffb74d"/>
+  <text x="438" y="186" fill="#e0e0e0" font-size="10">Needs NASM in build pipeline</text>
+
+  <circle cx="425" cy="206" r="4" fill="#ffb74d"/>
+  <text x="438" y="210" fill="#e0e0e0" font-size="10">Debuggable with source-level info</text>
+
+  <text x="420" y="245" fill="#fff176" font-size="10" font-weight="bold">Examples in Anton:</text>
+  <text x="420" y="260" fill="#e0e0e0" font-size="9" font-family="monospace">bootloader, ISR stubs, context switch</text>
+
+  <!-- Decision flow at bottom -->
+  <rect x="150" y="290" width="450" height="70" rx="8" fill="#2a2a4a" stroke="#fff176" stroke-width="1.5"/>
+
+  <text x="375" y="312" text-anchor="middle" fill="#fff176" font-size="11" font-weight="bold">Decision Rule</text>
+
+  <text x="200" y="336" fill="#e0e0e0" font-size="10">Can you express it as a one-liner?</text>
+  <text x="490" y="328" fill="#4fc3f7" font-size="10" font-weight="bold">Yes</text>
+  <text x="510" y="328" fill="#e0e0e0" font-size="10">-> Inline</text>
+  <text x="490" y="348" fill="#ffb74d" font-size="10" font-weight="bold">No</text>
+  <text x="510" y="348" fill="#e0e0e0" font-size="10">-> Separate file</text>
+
+  <text x="375" y="378" text-anchor="middle" fill="#8e99a4" font-size="9">When in doubt, use a separate file. Inline assembly's constraint syntax is error-prone.</text>
+</svg>

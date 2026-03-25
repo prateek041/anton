@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="700" height="280" fill="#1a1a2e"/>
+
+  <text x="350" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">Control Registers (CR0, CR3, CR4)</text>
+
+  <!-- Bit ruler -->
+  <text x="130" y="48" fill="#8e99a4" font-size="8">31</text>
+  <text x="580" y="48" fill="#8e99a4" font-size="8">0</text>
+
+  <!-- CR0 -->
+  <text x="60" y="76" text-anchor="middle" fill="#4fc3f7" font-size="14" font-weight="bold">CR0</text>
+  <rect x="130" y="56" width="460" height="32" rx="4" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <!-- PG bit 31 -->
+  <rect x="131" y="58" width="42" height="28" rx="2" fill="#2a1a3a" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="152" y="76" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="bold">PG</text>
+  <!-- WP bit 16 -->
+  <rect x="323" y="58" width="42" height="28" rx="2" fill="#2a1a3a" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="344" y="76" text-anchor="middle" fill="#ffb74d" font-size="10" font-weight="bold">WP</text>
+  <!-- PE bit 0 -->
+  <rect x="547" y="58" width="42" height="28" rx="2" fill="#2a1a3a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="568" y="76" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">PE</text>
+
+  <!-- CR0 annotations -->
+  <text x="152" y="104" text-anchor="middle" fill="#ef5350" font-size="9">Paging</text>
+  <text x="152" y="114" text-anchor="middle" fill="#ef5350" font-size="9">Enable</text>
+  <text x="344" y="104" text-anchor="middle" fill="#ffb74d" font-size="9">Write</text>
+  <text x="344" y="114" text-anchor="middle" fill="#ffb74d" font-size="9">Protect</text>
+  <text x="568" y="104" text-anchor="middle" fill="#81c784" font-size="9">Protection</text>
+  <text x="568" y="114" text-anchor="middle" fill="#81c784" font-size="9">Enable</text>
+
+  <!-- CR3 -->
+  <text x="60" y="156" text-anchor="middle" fill="#4fc3f7" font-size="14" font-weight="bold">CR3</text>
+  <rect x="130" y="136" width="460" height="32" rx="4" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <rect x="131" y="138" width="350" height="28" rx="2" fill="#1a2e1a" stroke="#81c784" stroke-width="1"/>
+  <text x="306" y="157" text-anchor="middle" fill="#81c784" font-size="11" font-weight="bold">Page Directory Base Address (PDBR)</text>
+  <text x="535" y="157" text-anchor="middle" fill="#8e99a4" font-size="9">Flags</text>
+
+  <text x="306" y="185" text-anchor="middle" fill="#8e99a4" font-size="9">Points to the physical address of the page directory. Updated on context switch.</text>
+
+  <!-- CR4 -->
+  <text x="60" y="222" text-anchor="middle" fill="#4fc3f7" font-size="14" font-weight="bold">CR4</text>
+  <rect x="130" y="202" width="460" height="32" rx="4" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <!-- PSE bit 4 -->
+  <rect x="490" y="204" width="42" height="28" rx="2" fill="#2a1a3a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="511" y="222" text-anchor="middle" fill="#ce93d8" font-size="10" font-weight="bold">PSE</text>
+  <!-- PAE bit 5 -->
+  <rect x="445" y="204" width="42" height="28" rx="2" fill="#2a1a3a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="466" y="222" text-anchor="middle" fill="#ce93d8" font-size="10" font-weight="bold">PAE</text>
+
+  <!-- CR4 annotations -->
+  <text x="466" y="252" text-anchor="middle" fill="#ce93d8" font-size="9">Physical Address</text>
+  <text x="466" y="262" text-anchor="middle" fill="#ce93d8" font-size="9">Extension</text>
+  <text x="540" y="252" text-anchor="middle" fill="#ce93d8" font-size="9">Page Size</text>
+  <text x="540" y="262" text-anchor="middle" fill="#ce93d8" font-size="9">Extension</text>
+
+  <text x="350" y="278" text-anchor="middle" fill="#5c6370" font-size="10">Only Ring 0 code can read or write control registers.</text>
+</svg>

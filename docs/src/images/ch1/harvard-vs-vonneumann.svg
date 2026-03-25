@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="760" height="320" fill="#1a1a2e"/>
+
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e0e0e0"/>
+    </marker>
+  </defs>
+
+  <!-- === Harvard side (left) === -->
+  <text x="190" y="28" text-anchor="middle" fill="#e0e0e0" font-size="15" font-weight="bold">Harvard Architecture</text>
+
+  <!-- CPU -->
+  <rect x="140" y="120" width="100" height="60" rx="8" fill="#1a1a2e" stroke="#4fc3f7" stroke-width="2.5"/>
+  <text x="190" y="155" text-anchor="middle" fill="#4fc3f7" font-size="14" font-weight="bold">CPU</text>
+
+  <!-- Instruction Memory -->
+  <rect x="30" y="50" width="100" height="50" rx="8" fill="#1a1a2e" stroke="#4fc3f7" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="80" y="72" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">Instruction</text>
+  <text x="80" y="86" text-anchor="middle" fill="#4fc3f7" font-size="10">Memory</text>
+
+  <!-- Data Memory -->
+  <rect x="250" y="50" width="100" height="50" rx="8" fill="#1a1a2e" stroke="#81c784" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="300" y="72" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">Data</text>
+  <text x="300" y="86" text-anchor="middle" fill="#81c784" font-size="10">Memory</text>
+
+  <!-- Instruction Bus -->
+  <line x1="105" y1="100" x2="160" y2="120" stroke="#4fc3f7" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="105" y="118" fill="#4fc3f7" font-size="9">Instr. Bus</text>
+
+  <!-- Data Bus -->
+  <line x1="275" y1="100" x2="225" y2="120" stroke="#81c784" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="248" y="118" fill="#81c784" font-size="9">Data Bus</text>
+
+  <!-- Two separate buses label -->
+  <text x="190" y="220" text-anchor="middle" fill="#8e99a4" font-size="11">Separate buses for instructions</text>
+  <text x="190" y="236" text-anchor="middle" fill="#8e99a4" font-size="11">and data (can fetch both at once)</text>
+
+  <!-- Divider -->
+  <line x1="380" y1="20" x2="380" y2="300" stroke="#3a3a5a" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="380" y="312" text-anchor="middle" fill="#5c6370" font-size="10">vs.</text>
+
+  <!-- === Von Neumann side (right) === -->
+  <text x="570" y="28" text-anchor="middle" fill="#e0e0e0" font-size="15" font-weight="bold">Von Neumann Architecture</text>
+
+  <!-- CPU -->
+  <rect x="520" y="50" width="100" height="60" rx="8" fill="#1a1a2e" stroke="#4fc3f7" stroke-width="2.5"/>
+  <text x="570" y="85" text-anchor="middle" fill="#4fc3f7" font-size="14" font-weight="bold">CPU</text>
+
+  <!-- Single Memory -->
+  <rect x="500" y="200" width="140" height="56" rx="8" fill="#1a1a2e" stroke="#ce93d8" stroke-width="2"/>
+  <text x="570" y="224" text-anchor="middle" fill="#ce93d8" font-size="12" font-weight="bold">Memory</text>
+  <text x="570" y="242" text-anchor="middle" fill="#8e99a4" font-size="10">Instr. + Data</text>
+
+  <!-- Single Bus -->
+  <rect x="548" y="120" width="44" height="72" rx="4" fill="#2a1a1a" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="570" y="150" text-anchor="middle" fill="#ef5350" font-size="8" font-weight="bold">Single</text>
+  <text x="570" y="162" text-anchor="middle" fill="#ef5350" font-size="8" font-weight="bold">Bus</text>
+
+  <!-- Arrows -->
+  <line x1="570" y1="110" x2="570" y2="120" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="570" y1="192" x2="570" y2="200" stroke="#e0e0e0" stroke-width="2"/>
+
+  <!-- One shared bus label -->
+  <text x="570" y="286" text-anchor="middle" fill="#8e99a4" font-size="11">One shared bus for both</text>
+  <text x="570" y="302" text-anchor="middle" fill="#8e99a4" font-size="11">(simpler, but potential bottleneck)</text>
+</svg>

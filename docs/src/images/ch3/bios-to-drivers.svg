@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="340" fill="#1a1a2e"/>
+
+  <text x="400" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">BIOS Services to Kernel Drivers: The Handoff</text>
+
+  <!-- Left: Real Mode -->
+  <rect x="30" y="45" width="330" height="32" rx="5" fill="#1b3a2a" stroke="#81c784" stroke-width="2"/>
+  <text x="195" y="67" text-anchor="middle" fill="#81c784" font-size="12" font-weight="bold">Real Mode (Bootloader)</text>
+
+  <rect x="30" y="85" width="330" height="200" rx="6" fill="#1b2a3a" stroke="#81c784" stroke-width="1.5"/>
+
+  <!-- BIOS services -->
+  <rect x="50" y="100" width="130" height="32" rx="4" fill="#2a2a4a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="115" y="120" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">INT 0x10</text>
+  <text x="200" y="120" fill="#e0e0e0" font-size="9">Video / text output</text>
+
+  <rect x="50" y="140" width="130" height="32" rx="4" fill="#2a2a4a" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="115" y="160" text-anchor="middle" fill="#ffb74d" font-size="10" font-weight="bold">INT 0x13</text>
+  <text x="200" y="160" fill="#e0e0e0" font-size="9">Disk read</text>
+
+  <rect x="50" y="180" width="130" height="32" rx="4" fill="#2a2a4a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="115" y="200" text-anchor="middle" fill="#ce93d8" font-size="10" font-weight="bold">INT 0x16</text>
+  <text x="200" y="200" fill="#e0e0e0" font-size="9">Keyboard input</text>
+
+  <rect x="50" y="220" width="130" height="32" rx="4" fill="#2a2a4a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="115" y="240" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">INT 0x15</text>
+  <text x="200" y="240" fill="#e0e0e0" font-size="9">Memory map (E820)</text>
+
+  <text x="195" y="275" text-anchor="middle" fill="#8e99a4" font-size="9">BIOS provides everything</text>
+
+  <!-- Mode switch arrow -->
+  <rect x="370" y="120" width="60" height="110" rx="8" fill="#3a1b1b" stroke="#ef5350" stroke-width="2"/>
+  <text x="400" y="160" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="bold" transform="rotate(-90 400 175)">MODE SWITCH</text>
+
+  <!-- Big X over BIOS -->
+  <line x1="375" y1="240" x2="425" y2="265" stroke="#ef5350" stroke-width="3"/>
+  <line x1="425" y1="240" x2="375" y2="265" stroke="#ef5350" stroke-width="3"/>
+  <text x="400" y="284" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="bold">BIOS gone</text>
+
+  <!-- Right: Protected Mode -->
+  <rect x="440" y="45" width="330" height="32" rx="5" fill="#3a2a1a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="605" y="67" text-anchor="middle" fill="#ffb74d" font-size="12" font-weight="bold">Protected Mode (Kernel)</text>
+
+  <rect x="440" y="85" width="330" height="200" rx="6" fill="#1b2a3a" stroke="#ffb74d" stroke-width="1.5"/>
+
+  <!-- Kernel drivers -->
+  <rect x="460" y="100" width="140" height="32" rx="4" fill="#2a2a4a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="530" y="120" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">VGA Driver</text>
+  <text x="618" y="120" fill="#e0e0e0" font-size="9">Port 0x3D4+</text>
+
+  <rect x="460" y="140" width="140" height="32" rx="4" fill="#2a2a4a" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="530" y="160" text-anchor="middle" fill="#ffb74d" font-size="10" font-weight="bold">ATA Driver</text>
+  <text x="618" y="160" fill="#e0e0e0" font-size="9">Port 0x1F0+</text>
+
+  <rect x="460" y="180" width="140" height="32" rx="4" fill="#2a2a4a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="530" y="200" text-anchor="middle" fill="#ce93d8" font-size="10" font-weight="bold">PS/2 Driver</text>
+  <text x="618" y="200" fill="#e0e0e0" font-size="9">Port 0x60+</text>
+
+  <rect x="460" y="220" width="140" height="32" rx="4" fill="#2a2a4a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="530" y="240" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">E820 Data</text>
+  <text x="618" y="240" fill="#e0e0e0" font-size="9">Saved earlier</text>
+
+  <text x="605" y="275" text-anchor="middle" fill="#8e99a4" font-size="9">Kernel provides everything</text>
+
+  <!-- Connecting dashed arrows between corresponding services -->
+  <line x1="340" y1="116" x2="460" y2="116" stroke="#4fc3f7" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="340" y1="156" x2="460" y2="156" stroke="#ffb74d" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="340" y1="196" x2="460" y2="196" stroke="#ce93d8" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="340" y1="236" x2="460" y2="236" stroke="#81c784" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Bottom note -->
+  <rect x="120" y="295" width="560" height="35" rx="5" fill="#2a2a4a" stroke="#fff176" stroke-width="1.5"/>
+  <text x="400" y="310" text-anchor="middle" fill="#fff176" font-size="10">Every BIOS service must be replaced by a kernel driver before the mode switch.</text>
+  <text x="400" y="325" text-anchor="middle" fill="#e0e0e0" font-size="9">The E820 memory map must be saved during Real Mode because you cannot query it later.</text>
+</svg>

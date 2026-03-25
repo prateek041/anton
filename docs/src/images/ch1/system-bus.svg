@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="720" height="300" fill="#1a1a2e"/>
+
+  <text x="360" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">The System Bus: Three Buses in One</text>
+
+  <!-- CPU block -->
+  <rect x="30" y="40" width="140" height="100" rx="10" fill="#1a1a2e" stroke="#4fc3f7" stroke-width="2.5"/>
+  <text x="100" y="75" text-anchor="middle" fill="#4fc3f7" font-size="16" font-weight="bold">CPU</text>
+  <text x="100" y="95" text-anchor="middle" fill="#8e99a4" font-size="9">Executes</text>
+  <text x="100" y="107" text-anchor="middle" fill="#8e99a4" font-size="9">instructions</text>
+
+  <!-- Memory block -->
+  <rect x="290" y="40" width="140" height="100" rx="10" fill="#1a1a2e" stroke="#81c784" stroke-width="2.5"/>
+  <text x="360" y="75" text-anchor="middle" fill="#81c784" font-size="16" font-weight="bold">Memory</text>
+  <text x="360" y="95" text-anchor="middle" fill="#8e99a4" font-size="9">Stores programs</text>
+  <text x="360" y="107" text-anchor="middle" fill="#8e99a4" font-size="9">and data</text>
+
+  <!-- I/O Devices block -->
+  <rect x="550" y="40" width="140" height="100" rx="10" fill="#1a1a2e" stroke="#ffb74d" stroke-width="2.5"/>
+  <text x="620" y="70" text-anchor="middle" fill="#ffb74d" font-size="14" font-weight="bold">I/O Devices</text>
+  <text x="620" y="90" text-anchor="middle" fill="#8e99a4" font-size="9">Keyboard, Screen,</text>
+  <text x="620" y="102" text-anchor="middle" fill="#8e99a4" font-size="9">Disk, Timer, NIC</text>
+
+  <!-- Connectors down to bus -->
+  <line x1="100" y1="140" x2="100" y2="168" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="360" y1="140" x2="360" y2="168" stroke="#e0e0e0" stroke-width="2"/>
+  <line x1="620" y1="140" x2="620" y2="168" stroke="#e0e0e0" stroke-width="2"/>
+
+  <!-- Three bus lanes -->
+  <!-- Address Bus -->
+  <rect x="50" y="170" width="620" height="28" rx="4" fill="#2a1a1a" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="360" y="189" text-anchor="middle" fill="#ef5350" font-size="11" font-weight="bold">Address Bus</text>
+  <text x="690" y="189" fill="#ef5350" font-size="8">Which location?</text>
+
+  <!-- Data Bus -->
+  <rect x="50" y="204" width="620" height="28" rx="4" fill="#1a2e1a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="360" y="223" text-anchor="middle" fill="#81c784" font-size="11" font-weight="bold">Data Bus</text>
+  <text x="690" y="223" fill="#81c784" font-size="8">What data?</text>
+
+  <!-- Control Bus -->
+  <rect x="50" y="238" width="620" height="28" rx="4" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="360" y="257" text-anchor="middle" fill="#4fc3f7" font-size="11" font-weight="bold">Control Bus</text>
+  <text x="690" y="257" fill="#4fc3f7" font-size="8">Read or Write?</text>
+
+  <!-- Bottom note -->
+  <text x="360" y="290" text-anchor="middle" fill="#8e99a4" font-size="11">All communication between CPU, memory, and devices flows over these three buses.</text>
+</svg>

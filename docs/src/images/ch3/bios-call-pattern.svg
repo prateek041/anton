@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="300" fill="#1a1a2e"/>
+
+  <defs>
+    <marker id="bios-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e0e0e0"/>
+    </marker>
+  </defs>
+
+  <text x="400" y="22" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">BIOS Call Pattern</text>
+
+  <!-- Step 1 -->
+  <rect x="20" y="50" width="100" height="55" rx="5" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="70" y="70" text-anchor="middle" fill="#4fc3f7" font-size="9" font-weight="bold">1. Set AH</text>
+  <text x="70" y="86" text-anchor="middle" fill="#e0e0e0" font-size="8">= function</text>
+  <text x="70" y="98" text-anchor="middle" fill="#e0e0e0" font-size="8">number</text>
+
+  <line x1="120" y1="78" x2="132" y2="78" stroke="#e0e0e0" stroke-width="1.5" marker-end="url(#bios-arr)"/>
+
+  <!-- Step 2 -->
+  <rect x="135" y="50" width="100" height="55" rx="5" fill="#1b2a3a" stroke="#81c784" stroke-width="2"/>
+  <text x="185" y="70" text-anchor="middle" fill="#81c784" font-size="9" font-weight="bold">2. Set Params</text>
+  <text x="185" y="86" text-anchor="middle" fill="#e0e0e0" font-size="8">AL, BX, CX,</text>
+  <text x="185" y="98" text-anchor="middle" fill="#e0e0e0" font-size="8">DX, ES, ...</text>
+
+  <line x1="235" y1="78" x2="247" y2="78" stroke="#e0e0e0" stroke-width="1.5" marker-end="url(#bios-arr)"/>
+
+  <!-- Step 3 -->
+  <rect x="250" y="50" width="90" height="55" rx="5" fill="#3a1b2a" stroke="#ef5350" stroke-width="2"/>
+  <text x="295" y="70" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="bold">3. INT N</text>
+  <text x="295" y="86" text-anchor="middle" fill="#e0e0e0" font-size="9" font-family="monospace">int 0x13</text>
+
+  <line x1="340" y1="78" x2="352" y2="78" stroke="#e0e0e0" stroke-width="1.5" marker-end="url(#bios-arr)"/>
+
+  <!-- Step 4 -->
+  <rect x="355" y="50" width="110" height="55" rx="5" fill="#2a2a4a" stroke="#ce93d8" stroke-width="2"/>
+  <text x="410" y="70" text-anchor="middle" fill="#ce93d8" font-size="9" font-weight="bold">4. CPU Jumps</text>
+  <text x="410" y="86" text-anchor="middle" fill="#e0e0e0" font-size="8">to BIOS handler</text>
+  <text x="410" y="98" text-anchor="middle" fill="#e0e0e0" font-size="8">in ROM</text>
+
+  <line x1="465" y1="78" x2="477" y2="78" stroke="#e0e0e0" stroke-width="1.5" marker-end="url(#bios-arr)"/>
+
+  <!-- Step 5 -->
+  <rect x="480" y="50" width="100" height="55" rx="5" fill="#2a2a4a" stroke="#ce93d8" stroke-width="2"/>
+  <text x="530" y="70" text-anchor="middle" fill="#ce93d8" font-size="9" font-weight="bold">5. BIOS Works</text>
+  <text x="530" y="86" text-anchor="middle" fill="#e0e0e0" font-size="8">reads disk,</text>
+  <text x="530" y="98" text-anchor="middle" fill="#e0e0e0" font-size="8">prints char, ...</text>
+
+  <line x1="580" y1="78" x2="592" y2="78" stroke="#e0e0e0" stroke-width="1.5" marker-end="url(#bios-arr)"/>
+
+  <!-- Step 6 -->
+  <rect x="595" y="50" width="80" height="55" rx="5" fill="#2a2a4a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="635" y="70" text-anchor="middle" fill="#ffb74d" font-size="9" font-weight="bold">6. IRET</text>
+  <text x="635" y="86" text-anchor="middle" fill="#e0e0e0" font-size="8">Returns to</text>
+  <text x="635" y="98" text-anchor="middle" fill="#e0e0e0" font-size="8">your code</text>
+
+  <line x1="675" y1="78" x2="687" y2="78" stroke="#e0e0e0" stroke-width="1.5" marker-end="url(#bios-arr)"/>
+
+  <!-- Step 7 -->
+  <rect x="690" y="50" width="90" height="55" rx="5" fill="#1b3a2a" stroke="#81c784" stroke-width="2"/>
+  <text x="735" y="70" text-anchor="middle" fill="#81c784" font-size="9" font-weight="bold">7. Check CF</text>
+  <text x="735" y="86" text-anchor="middle" fill="#e0e0e0" font-size="8">Read results</text>
+  <text x="735" y="98" text-anchor="middle" fill="#e0e0e0" font-size="8">from regs</text>
+
+  <!-- Example: INT 0x13 disk read -->
+  <text x="400" y="140" text-anchor="middle" fill="#fff176" font-size="11" font-weight="bold">Example: INT 0x13 (Read Sectors)</text>
+
+  <!-- Input registers -->
+  <rect x="40" y="155" width="330" height="115" rx="6" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="205" y="175" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">Registers IN</text>
+
+  <text x="60" y="195" fill="#e0e0e0" font-size="9" font-family="monospace">AH = 0x02</text>
+  <text x="170" y="195" fill="#8e99a4" font-size="8">(read sectors)</text>
+  <text x="60" y="212" fill="#e0e0e0" font-size="9" font-family="monospace">AL = count</text>
+  <text x="170" y="212" fill="#8e99a4" font-size="8">(sectors to read)</text>
+  <text x="60" y="229" fill="#e0e0e0" font-size="9" font-family="monospace">CH/CL/DH = CHS</text>
+  <text x="200" y="229" fill="#8e99a4" font-size="8">(cylinder/sector/head)</text>
+  <text x="60" y="246" fill="#e0e0e0" font-size="9" font-family="monospace">DL = drive</text>
+  <text x="170" y="246" fill="#8e99a4" font-size="8">(0x80 = first HDD)</text>
+  <text x="60" y="263" fill="#e0e0e0" font-size="9" font-family="monospace">ES:BX = buffer</text>
+  <text x="190" y="263" fill="#8e99a4" font-size="8">(destination address)</text>
+
+  <!-- Output registers -->
+  <rect x="420" y="155" width="340" height="115" rx="6" fill="#1b2a3a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="590" y="175" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">Registers OUT</text>
+
+  <text x="440" y="195" fill="#e0e0e0" font-size="9" font-family="monospace">CF = 0</text>
+  <text x="530" y="195" fill="#81c784" font-size="8">success</text>
+  <text x="440" y="212" fill="#e0e0e0" font-size="9" font-family="monospace">CF = 1</text>
+  <text x="530" y="212" fill="#ef5350" font-size="8">error (AH = error code)</text>
+  <text x="440" y="229" fill="#e0e0e0" font-size="9" font-family="monospace">AL = sectors read</text>
+  <text x="580" y="229" fill="#8e99a4" font-size="8">(actual count)</text>
+  <text x="440" y="249" fill="#e0e0e0" font-size="9" font-family="monospace">ES:BX buffer</text>
+  <text x="570" y="249" fill="#8e99a4" font-size="8">now filled with data</text>
+
+  <!-- Bottom note -->
+  <text x="400" y="292" text-anchor="middle" fill="#8e99a4" font-size="9">BIOS services only work in Real Mode. Once you switch to Protected Mode, these interrupts are gone.</text>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="220" fill="#1a1a2e"/>
+
+  <defs>
+    <marker id="cap-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e0e0e0"/>
+    </marker>
+  </defs>
+
+  <text x="400" y="22" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">From C Source to Machine Code</text>
+
+  <!-- C Source -->
+  <rect x="20" y="45" width="140" height="90" rx="6" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="90" y="65" text-anchor="middle" fill="#4fc3f7" font-size="11" font-weight="bold">C Source</text>
+  <text x="90" y="82" text-anchor="middle" fill="#e0e0e0" font-size="9" font-style="italic">int add(int a, int b)</text>
+  <text x="90" y="96" text-anchor="middle" fill="#e0e0e0" font-size="9" font-style="italic">{</text>
+  <text x="90" y="110" text-anchor="middle" fill="#e0e0e0" font-size="9" font-style="italic">  return a + b;</text>
+  <text x="90" y="124" text-anchor="middle" fill="#e0e0e0" font-size="9" font-style="italic">}</text>
+
+  <!-- Arrow -->
+  <line x1="160" y1="90" x2="195" y2="90" stroke="#e0e0e0" stroke-width="2" marker-end="url(#cap-arr)"/>
+  <text x="178" y="82" text-anchor="middle" fill="#fff176" font-size="8" font-weight="bold">gcc -S</text>
+
+  <!-- Assembly Listing -->
+  <rect x="198" y="45" width="150" height="90" rx="6" fill="#1b2a3a" stroke="#81c784" stroke-width="2"/>
+  <text x="273" y="65" text-anchor="middle" fill="#81c784" font-size="11" font-weight="bold">Assembly (.s)</text>
+  <text x="273" y="82" text-anchor="middle" fill="#e0e0e0" font-size="9" font-style="italic">add:</text>
+  <text x="273" y="96" text-anchor="middle" fill="#e0e0e0" font-size="9" font-style="italic">  push ebp</text>
+  <text x="273" y="110" text-anchor="middle" fill="#e0e0e0" font-size="9" font-style="italic">  mov ebp, esp</text>
+  <text x="273" y="124" text-anchor="middle" fill="#e0e0e0" font-size="9" font-style="italic">  mov eax, [ebp+8]</text>
+
+  <!-- Arrow -->
+  <line x1="348" y1="90" x2="383" y2="90" stroke="#e0e0e0" stroke-width="2" marker-end="url(#cap-arr)"/>
+  <text x="366" y="82" text-anchor="middle" fill="#fff176" font-size="8" font-weight="bold">gcc -c</text>
+
+  <!-- Object File -->
+  <rect x="386" y="45" width="140" height="90" rx="6" fill="#1b2a3a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="456" y="65" text-anchor="middle" fill="#ffb74d" font-size="11" font-weight="bold">Object (.o)</text>
+  <text x="456" y="85" text-anchor="middle" fill="#e0e0e0" font-size="9">.text section</text>
+  <text x="456" y="100" text-anchor="middle" fill="#e0e0e0" font-size="9">symbols + relocs</text>
+  <text x="456" y="118" text-anchor="middle" fill="#8e99a4" font-size="8">(ELF format)</text>
+
+  <!-- Arrow -->
+  <line x1="526" y1="90" x2="561" y2="90" stroke="#e0e0e0" stroke-width="2" marker-end="url(#cap-arr)"/>
+  <text x="544" y="82" text-anchor="middle" fill="#fff176" font-size="8" font-weight="bold">ld</text>
+
+  <!-- Machine Code -->
+  <rect x="564" y="45" width="210" height="90" rx="6" fill="#1b2a3a" stroke="#ef5350" stroke-width="2"/>
+  <text x="669" y="65" text-anchor="middle" fill="#ef5350" font-size="11" font-weight="bold">Machine Code</text>
+  <text x="669" y="85" text-anchor="middle" fill="#e0e0e0" font-size="10" font-family="monospace">55 89 E5 8B 45 08</text>
+  <text x="669" y="103" text-anchor="middle" fill="#e0e0e0" font-size="10" font-family="monospace">03 45 0C 5D C3</text>
+  <text x="669" y="121" text-anchor="middle" fill="#8e99a4" font-size="8">Raw bytes the CPU executes</text>
+
+  <!-- Bottom annotation -->
+  <rect x="140" y="155" width="520" height="40" rx="5" fill="#2a2a4a" stroke="#fff176" stroke-width="1.5"/>
+  <text x="400" y="174" text-anchor="middle" fill="#fff176" font-size="10" font-weight="bold">gcc -S lets you see exactly what the compiler produces.</text>
+  <text x="400" y="190" text-anchor="middle" fill="#e0e0e0" font-size="9">Reading assembly output is how you debug the kernel when C behavior seems wrong.</text>
+</svg>
