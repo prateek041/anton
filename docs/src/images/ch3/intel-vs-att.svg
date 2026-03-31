@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 340" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="750" height="340" fill="#1a1a2e"/>
+
+  <text x="375" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">Intel / NASM vs. AT&amp;T / GAS Syntax</text>
+
+  <!-- Intel column header -->
+  <rect x="30" y="40" width="330" height="32" rx="5" fill="#1b3a2a" stroke="#81c784" stroke-width="2"/>
+  <text x="195" y="62" text-anchor="middle" fill="#81c784" font-size="13" font-weight="bold">Intel / NASM (Anton uses this)</text>
+
+  <!-- AT&T column header -->
+  <rect x="390" y="40" width="330" height="32" rx="5" fill="#3a1b1b" stroke="#ef5350" stroke-width="2"/>
+  <text x="555" y="62" text-anchor="middle" fill="#ef5350" font-size="13" font-weight="bold">AT&amp;T / GAS</text>
+
+  <!-- Row 1: Move immediate -->
+  <rect x="30" y="82" width="330" height="36" rx="3" fill="#1b2a3a"/>
+  <text x="195" y="105" text-anchor="middle" fill="#e0e0e0" font-size="13" font-family="monospace">mov eax, 5</text>
+
+  <rect x="390" y="82" width="330" height="36" rx="3" fill="#1b2a3a"/>
+  <text x="555" y="105" text-anchor="middle" fill="#e0e0e0" font-size="13" font-family="monospace">movl $5, %eax</text>
+
+  <!-- Row 2: Add -->
+  <rect x="30" y="124" width="330" height="36" rx="3" fill="#222240"/>
+  <text x="195" y="147" text-anchor="middle" fill="#e0e0e0" font-size="13" font-family="monospace">add eax, ebx</text>
+
+  <rect x="390" y="124" width="330" height="36" rx="3" fill="#222240"/>
+  <text x="555" y="147" text-anchor="middle" fill="#e0e0e0" font-size="13" font-family="monospace">addl %ebx, %eax</text>
+
+  <!-- Row 3: Memory write -->
+  <rect x="30" y="166" width="330" height="36" rx="3" fill="#1b2a3a"/>
+  <text x="195" y="189" text-anchor="middle" fill="#e0e0e0" font-size="13" font-family="monospace">mov [0x1000], ecx</text>
+
+  <rect x="390" y="166" width="330" height="36" rx="3" fill="#1b2a3a"/>
+  <text x="555" y="189" text-anchor="middle" fill="#e0e0e0" font-size="13" font-family="monospace">movl %ecx, 0x1000</text>
+
+  <!-- Differences section -->
+  <text x="375" y="228" text-anchor="middle" fill="#fff176" font-size="12" font-weight="bold">Key Differences</text>
+
+  <!-- Difference items -->
+  <circle cx="90" cy="254" r="4" fill="#4fc3f7"/>
+  <text x="100" y="258" fill="#e0e0e0" font-size="10"><tspan font-weight="bold" fill="#4fc3f7">Operand order:</tspan> Intel = dest, src / AT&amp;T = src, dest</text>
+
+  <circle cx="90" cy="278" r="4" fill="#ffb74d"/>
+  <text x="100" y="282" fill="#e0e0e0" font-size="10"><tspan font-weight="bold" fill="#ffb74d">Register prefix:</tspan> Intel = eax / AT&amp;T = %eax</text>
+
+  <circle cx="90" cy="302" r="4" fill="#ce93d8"/>
+  <text x="100" y="306" fill="#e0e0e0" font-size="10"><tspan font-weight="bold" fill="#ce93d8">Immediate prefix:</tspan> Intel = 5 / AT&amp;T = $5</text>
+
+  <circle cx="90" cy="326" r="4" fill="#ef5350"/>
+  <text x="100" y="330" fill="#e0e0e0" font-size="10"><tspan font-weight="bold" fill="#ef5350">Size suffix:</tspan> Intel = inferred from register / AT&amp;T = movl, movw, movb</text>
+</svg>

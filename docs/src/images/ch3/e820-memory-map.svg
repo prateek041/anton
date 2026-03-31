@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 480" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="600" height="480" fill="#1a1a2e"/>
+
+  <text x="300" y="22" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">E820 Memory Map (Typical QEMU Layout)</text>
+
+  <!-- Address bar (vertical, bottom = 0x0, top = 0xFFFFFFFF) -->
+  <!-- We draw bottom-up logically but top-down visually for readability -->
+
+  <text x="55" y="52" text-anchor="end" fill="#8e99a4" font-size="8" font-family="monospace">0xFFFF_FFFF</text>
+
+  <!-- High BIOS Reserved -->
+  <rect x="70" y="42" width="200" height="35" rx="4" fill="#3a1b1b" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="170" y="58" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="bold">Reserved</text>
+  <text x="170" y="72" text-anchor="middle" fill="#e0e0e0" font-size="8">High BIOS (0xFFFC0000+)</text>
+
+  <!-- Gap -->
+  <rect x="70" y="80" width="200" height="20" rx="0" fill="#222240"/>
+  <text x="170" y="94" text-anchor="middle" fill="#5c6370" font-size="8">...</text>
+
+  <!-- Main Usable RAM -->
+  <text x="55" y="118" text-anchor="end" fill="#8e99a4" font-size="8" font-family="monospace">0x0800_0000</text>
+  <rect x="70" y="103" width="200" height="140" rx="4" fill="#1b3a2a" stroke="#81c784" stroke-width="2"/>
+  <text x="170" y="155" text-anchor="middle" fill="#81c784" font-size="12" font-weight="bold">Usable RAM</text>
+  <text x="170" y="175" text-anchor="middle" fill="#e0e0e0" font-size="9">0x100000 - 0x8000000</text>
+  <text x="170" y="192" text-anchor="middle" fill="#e0e0e0" font-size="9">(~127 MB)</text>
+  <text x="170" y="210" text-anchor="middle" fill="#fff176" font-size="8" font-weight="bold">Main kernel memory</text>
+  <text x="170" y="225" text-anchor="middle" fill="#fff176" font-size="8" font-weight="bold">loads here at 0x100000</text>
+
+  <text x="55" y="250" text-anchor="end" fill="#8e99a4" font-size="8" font-family="monospace">0x0010_0000</text>
+
+  <!-- BIOS ROM Reserved -->
+  <rect x="70" y="248" width="200" height="40" rx="4" fill="#3a1b1b" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="170" y="265" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="bold">Reserved (BIOS ROM)</text>
+  <text x="170" y="280" text-anchor="middle" fill="#e0e0e0" font-size="8">0xF0000 - 0x100000 (64 KB)</text>
+
+  <!-- VGA / ROM area -->
+  <rect x="70" y="291" width="200" height="35" rx="4" fill="#3a2a1a" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="170" y="308" text-anchor="middle" fill="#ffb74d" font-size="9" font-weight="bold">Video / ROM Area</text>
+  <text x="170" y="322" text-anchor="middle" fill="#e0e0e0" font-size="8">0xA0000 - 0xF0000</text>
+
+  <text x="55" y="342" text-anchor="end" fill="#8e99a4" font-size="8" font-family="monospace">0x000A_0000</text>
+
+  <!-- Reserved (EBDA) -->
+  <rect x="70" y="332" width="200" height="28" rx="4" fill="#3a1b1b" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="170" y="350" text-anchor="middle" fill="#ef5350" font-size="8">Reserved (EBDA) 0x9FC00-0xA0000</text>
+
+  <!-- Low usable RAM -->
+  <rect x="70" y="363" width="200" height="75" rx="4" fill="#1b3a2a" stroke="#81c784" stroke-width="2"/>
+  <text x="170" y="390" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">Usable (Low RAM)</text>
+  <text x="170" y="408" text-anchor="middle" fill="#e0e0e0" font-size="9">0x0 - 0x9FC00</text>
+  <text x="170" y="424" text-anchor="middle" fill="#e0e0e0" font-size="8">(~639 KB)</text>
+  <text x="170" y="435" text-anchor="middle" fill="#8e99a4" font-size="7">IVT, BDA, boot sector, stack</text>
+
+  <text x="55" y="442" text-anchor="end" fill="#8e99a4" font-size="8" font-family="monospace">0x0000_0000</text>
+
+  <!-- Legend -->
+  <rect x="320" y="55" width="250" height="100" rx="6" fill="#2a2a4a" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="445" y="75" text-anchor="middle" fill="#e0e0e0" font-size="10" font-weight="bold">E820 Type Legend</text>
+
+  <rect x="335" y="85" width="14" height="14" rx="2" fill="#1b3a2a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="358" y="97" fill="#81c784" font-size="9">Type 1: Usable (kernel can use)</text>
+
+  <rect x="335" y="105" width="14" height="14" rx="2" fill="#3a1b1b" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="358" y="117" fill="#ef5350" font-size="9">Type 2: Reserved (hands off!)</text>
+
+  <rect x="335" y="125" width="14" height="14" rx="2" fill="#3a2a1a" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="358" y="137" fill="#ffb74d" font-size="9">Video / ROM (memory-mapped I/O)</text>
+
+  <!-- Annotation box -->
+  <rect x="320" y="180" width="250" height="80" rx="6" fill="#2a2a4a" stroke="#fff176" stroke-width="1.5"/>
+  <text x="445" y="200" text-anchor="middle" fill="#fff176" font-size="10" font-weight="bold">Why E820 matters</text>
+  <text x="445" y="218" text-anchor="middle" fill="#e0e0e0" font-size="9">RAM has holes. Not every</text>
+  <text x="445" y="232" text-anchor="middle" fill="#e0e0e0" font-size="9">address is real memory.</text>
+  <text x="445" y="248" text-anchor="middle" fill="#e0e0e0" font-size="9">E820 tells you where the</text>
+  <text x="445" y="262" text-anchor="middle" fill="#e0e0e0" font-size="9">holes are.</text>
+
+  <!-- Bottom note -->
+  <text x="300" y="470" text-anchor="middle" fill="#8e99a4" font-size="9">INT 0x15, EAX=0xE820 returns this map. The bootloader saves it before switching to Protected Mode.</text>
+</svg>

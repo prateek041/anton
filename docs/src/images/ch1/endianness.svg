@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 320" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="620" height="320" fill="#1a1a2e"/>
+
+  <text x="310" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">Endianness: Storing 0x1234ABCD in Memory</text>
+
+  <!-- Source value -->
+  <text x="310" y="52" text-anchor="middle" fill="#fff176" font-size="16" font-family="monospace" font-weight="bold">Value: 0x1234ABCD</text>
+
+  <!-- Byte labels -->
+  <text x="310" y="72" text-anchor="middle" fill="#8e99a4" font-size="10">
+    <tspan fill="#ef5350">12</tspan> = most significant byte,
+    <tspan fill="#4fc3f7">CD</tspan> = least significant byte
+  </text>
+
+  <!-- === Big-Endian === -->
+  <text x="310" y="105" text-anchor="middle" fill="#ffb74d" font-size="13" font-weight="bold">Big-Endian (most significant byte first)</text>
+
+  <!-- Address labels -->
+  <text x="155" y="125" text-anchor="middle" fill="#8e99a4" font-size="10" font-family="monospace">0x1000</text>
+  <text x="255" y="125" text-anchor="middle" fill="#8e99a4" font-size="10" font-family="monospace">0x1001</text>
+  <text x="355" y="125" text-anchor="middle" fill="#8e99a4" font-size="10" font-family="monospace">0x1002</text>
+  <text x="455" y="125" text-anchor="middle" fill="#8e99a4" font-size="10" font-family="monospace">0x1003</text>
+
+  <!-- Big-endian cells -->
+  <rect x="110" y="130" width="90" height="38" rx="5" fill="#2a1a1a" stroke="#ef5350" stroke-width="2"/>
+  <text x="155" y="154" text-anchor="middle" fill="#ef5350" font-size="16" font-weight="bold" font-family="monospace">12</text>
+
+  <rect x="210" y="130" width="90" height="38" rx="5" fill="#2e2a1a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="255" y="154" text-anchor="middle" fill="#ffb74d" font-size="16" font-weight="bold" font-family="monospace">34</text>
+
+  <rect x="310" y="130" width="90" height="38" rx="5" fill="#1a2e1a" stroke="#81c784" stroke-width="2"/>
+  <text x="355" y="154" text-anchor="middle" fill="#81c784" font-size="16" font-weight="bold" font-family="monospace">AB</text>
+
+  <rect x="410" y="130" width="90" height="38" rx="5" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="455" y="154" text-anchor="middle" fill="#4fc3f7" font-size="16" font-weight="bold" font-family="monospace">CD</text>
+
+  <text x="540" y="154" fill="#8e99a4" font-size="10">Looks "natural"</text>
+
+  <!-- === Little-Endian === -->
+  <text x="310" y="205" text-anchor="middle" fill="#ce93d8" font-size="13" font-weight="bold">Little-Endian (least significant byte first)</text>
+
+  <!-- Address labels -->
+  <text x="155" y="225" text-anchor="middle" fill="#8e99a4" font-size="10" font-family="monospace">0x1000</text>
+  <text x="255" y="225" text-anchor="middle" fill="#8e99a4" font-size="10" font-family="monospace">0x1001</text>
+  <text x="355" y="225" text-anchor="middle" fill="#8e99a4" font-size="10" font-family="monospace">0x1002</text>
+  <text x="455" y="225" text-anchor="middle" fill="#8e99a4" font-size="10" font-family="monospace">0x1003</text>
+
+  <!-- Little-endian cells (reversed) -->
+  <rect x="110" y="230" width="90" height="38" rx="5" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="155" y="254" text-anchor="middle" fill="#4fc3f7" font-size="16" font-weight="bold" font-family="monospace">CD</text>
+
+  <rect x="210" y="230" width="90" height="38" rx="5" fill="#1a2e1a" stroke="#81c784" stroke-width="2"/>
+  <text x="255" y="254" text-anchor="middle" fill="#81c784" font-size="16" font-weight="bold" font-family="monospace">AB</text>
+
+  <rect x="310" y="230" width="90" height="38" rx="5" fill="#2e2a1a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="355" y="254" text-anchor="middle" fill="#ffb74d" font-size="16" font-weight="bold" font-family="monospace">34</text>
+
+  <rect x="410" y="230" width="90" height="38" rx="5" fill="#2a1a1a" stroke="#ef5350" stroke-width="2"/>
+  <text x="455" y="254" text-anchor="middle" fill="#ef5350" font-size="16" font-weight="bold" font-family="monospace">12</text>
+
+  <text x="540" y="254" fill="#8e99a4" font-size="10">Looks "reversed"</text>
+
+  <!-- Bottom note -->
+  <rect x="90" y="282" width="440" height="30" rx="6" fill="#2a1a3a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="310" y="302" text-anchor="middle" fill="#ce93d8" font-size="12" font-weight="bold">x86 is little-endian. This is what you will see in hex dumps.</text>
+</svg>

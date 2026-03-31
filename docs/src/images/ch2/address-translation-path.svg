@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="200" fill="#1a1a2e"/>
+
+  <defs>
+    <marker id="atp-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e0e0e0"/>
+    </marker>
+  </defs>
+
+  <text x="400" y="22" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">Protected Mode Address Translation (Full Path)</text>
+
+  <!-- Effective Address -->
+  <rect x="15" y="55" width="120" height="50" rx="6" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="75" y="76" text-anchor="middle" fill="#4fc3f7" font-size="11" font-weight="bold">Effective</text>
+  <text x="75" y="93" text-anchor="middle" fill="#4fc3f7" font-size="11" font-weight="bold">Address</text>
+
+  <!-- Arrow -->
+  <line x1="135" y1="80" x2="165" y2="80" stroke="#e0e0e0" stroke-width="2" marker-end="url(#atp-arr)"/>
+
+  <!-- Segmentation -->
+  <rect x="168" y="45" width="130" height="70" rx="6" fill="#1b2a3a" stroke="#ce93d8" stroke-width="2"/>
+  <text x="233" y="68" text-anchor="middle" fill="#ce93d8" font-size="11" font-weight="bold">Segmentation</text>
+  <text x="233" y="86" text-anchor="middle" fill="#e0e0e0" font-size="9">GDT lookup</text>
+  <text x="233" y="100" text-anchor="middle" fill="#e0e0e0" font-size="9">base + offset</text>
+
+  <!-- Arrow -->
+  <line x1="298" y1="80" x2="328" y2="80" stroke="#e0e0e0" stroke-width="2" marker-end="url(#atp-arr)"/>
+
+  <!-- Linear Address -->
+  <rect x="332" y="55" width="120" height="50" rx="6" fill="#1b2a3a" stroke="#fff176" stroke-width="2"/>
+  <text x="392" y="76" text-anchor="middle" fill="#fff176" font-size="11" font-weight="bold">Linear</text>
+  <text x="392" y="93" text-anchor="middle" fill="#fff176" font-size="11" font-weight="bold">Address</text>
+
+  <!-- Arrow -->
+  <line x1="452" y1="80" x2="482" y2="80" stroke="#e0e0e0" stroke-width="2" marker-end="url(#atp-arr)"/>
+
+  <!-- Paging -->
+  <rect x="485" y="45" width="130" height="70" rx="6" fill="#1b2a3a" stroke="#81c784" stroke-width="2"/>
+  <text x="550" y="68" text-anchor="middle" fill="#81c784" font-size="11" font-weight="bold">Paging</text>
+  <text x="550" y="86" text-anchor="middle" fill="#e0e0e0" font-size="9">Page Directory</text>
+  <text x="550" y="100" text-anchor="middle" fill="#e0e0e0" font-size="9">+ Page Table</text>
+
+  <!-- Arrow -->
+  <line x1="615" y1="80" x2="645" y2="80" stroke="#e0e0e0" stroke-width="2" marker-end="url(#atp-arr)"/>
+
+  <!-- Physical Address -->
+  <rect x="648" y="55" width="130" height="50" rx="6" fill="#1a2e1a" stroke="#81c784" stroke-width="2.5"/>
+  <text x="713" y="76" text-anchor="middle" fill="#81c784" font-size="11" font-weight="bold">Physical</text>
+  <text x="713" y="93" text-anchor="middle" fill="#81c784" font-size="11" font-weight="bold">Address</text>
+
+  <!-- Labels below -->
+  <text x="75" y="130" text-anchor="middle" fill="#4fc3f7" font-size="9">From instruction</text>
+  <text x="233" y="130" text-anchor="middle" fill="#ce93d8" font-size="9">Hardware unit</text>
+  <text x="392" y="130" text-anchor="middle" fill="#fff176" font-size="9">Virtual address</text>
+  <text x="550" y="130" text-anchor="middle" fill="#81c784" font-size="9">Hardware unit</text>
+  <text x="713" y="130" text-anchor="middle" fill="#81c784" font-size="9">Actual RAM</text>
+
+  <!-- Note -->
+  <rect x="130" y="148" width="540" height="24" rx="4" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="400" y="164" text-anchor="middle" fill="#fff176" font-size="10">With flat model: segmentation is a no-op (base=0), so Linear = Effective.</text>
+  <text x="400" y="188" text-anchor="middle" fill="#5c6370" font-size="9">Paging is optional (CR0.PG). Without it: Linear = Physical.</text>
+</svg>

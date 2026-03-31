@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 420" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="750" height="420" fill="#1a1a2e"/>
+
+  <text x="375" y="28" text-anchor="middle" fill="#e0e0e0" font-size="15" font-weight="bold">x86 Instruction Set</text>
+
+  <!-- Center label -->
+  <rect x="305" y="185" width="140" height="40" rx="20" fill="#2a2a4a" stroke="#e0e0e0" stroke-width="2"/>
+  <text x="375" y="210" text-anchor="middle" fill="#e0e0e0" font-size="12" font-weight="bold">x86 ISA</text>
+
+  <!-- Data Movement -->
+  <rect x="30" y="50" width="180" height="70" rx="8" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="120" y="72" text-anchor="middle" fill="#4fc3f7" font-size="12" font-weight="bold">Data Movement</text>
+  <text x="120" y="90" text-anchor="middle" fill="#e0e0e0" font-size="10">MOV, PUSH, POP</text>
+  <text x="120" y="106" text-anchor="middle" fill="#8e99a4" font-size="10">LEA, XCHG</text>
+  <line x1="210" y1="90" x2="305" y2="200" stroke="#4fc3f7" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Arithmetic -->
+  <rect x="285" y="50" width="180" height="70" rx="8" fill="#1b2a3a" stroke="#81c784" stroke-width="2"/>
+  <text x="375" y="72" text-anchor="middle" fill="#81c784" font-size="12" font-weight="bold">Arithmetic</text>
+  <text x="375" y="90" text-anchor="middle" fill="#e0e0e0" font-size="10">ADD, SUB, MUL, DIV</text>
+  <text x="375" y="106" text-anchor="middle" fill="#8e99a4" font-size="10">INC, DEC, NEG</text>
+  <line x1="375" y1="120" x2="375" y2="185" stroke="#81c784" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Logic / Bitwise -->
+  <rect x="540" y="50" width="180" height="70" rx="8" fill="#1b2a3a" stroke="#ce93d8" stroke-width="2"/>
+  <text x="630" y="72" text-anchor="middle" fill="#ce93d8" font-size="12" font-weight="bold">Logic / Bitwise</text>
+  <text x="630" y="90" text-anchor="middle" fill="#e0e0e0" font-size="10">AND, OR, XOR, NOT</text>
+  <text x="630" y="106" text-anchor="middle" fill="#8e99a4" font-size="10">SHL, SHR, SAR</text>
+  <line x1="540" y1="90" x2="445" y2="200" stroke="#ce93d8" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Comparison -->
+  <rect x="30" y="170" width="180" height="70" rx="8" fill="#1b2a3a" stroke="#fff176" stroke-width="2"/>
+  <text x="120" y="192" text-anchor="middle" fill="#fff176" font-size="12" font-weight="bold">Comparison</text>
+  <text x="120" y="210" text-anchor="middle" fill="#e0e0e0" font-size="10">CMP, TEST</text>
+  <text x="120" y="226" text-anchor="middle" fill="#8e99a4" font-size="10">(set EFLAGS only)</text>
+  <line x1="210" y1="205" x2="305" y2="205" stroke="#fff176" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Control Flow -->
+  <rect x="540" y="170" width="180" height="70" rx="8" fill="#1b2a3a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="630" y="192" text-anchor="middle" fill="#ffb74d" font-size="12" font-weight="bold">Control Flow</text>
+  <text x="630" y="210" text-anchor="middle" fill="#e0e0e0" font-size="10">JMP, Jcc, CALL, RET</text>
+  <text x="630" y="226" text-anchor="middle" fill="#8e99a4" font-size="10">LOOP, INT</text>
+  <line x1="540" y1="205" x2="445" y2="205" stroke="#ffb74d" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- String Ops -->
+  <rect x="30" y="290" width="180" height="70" rx="8" fill="#1b2a3a" stroke="#ef5350" stroke-width="2"/>
+  <text x="120" y="312" text-anchor="middle" fill="#ef5350" font-size="12" font-weight="bold">String Operations</text>
+  <text x="120" y="330" text-anchor="middle" fill="#e0e0e0" font-size="10">MOVS, STOS, CMPS</text>
+  <text x="120" y="346" text-anchor="middle" fill="#8e99a4" font-size="10">REP prefix</text>
+  <line x1="210" y1="310" x2="305" y2="215" stroke="#ef5350" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- I/O -->
+  <rect x="285" y="290" width="180" height="70" rx="8" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="375" y="312" text-anchor="middle" fill="#4fc3f7" font-size="12" font-weight="bold">I/O</text>
+  <text x="375" y="330" text-anchor="middle" fill="#e0e0e0" font-size="10">IN, OUT</text>
+  <text x="375" y="346" text-anchor="middle" fill="#8e99a4" font-size="10">INS, OUTS</text>
+  <line x1="375" y1="290" x2="375" y2="225" stroke="#4fc3f7" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- System / Protected Mode -->
+  <rect x="540" y="290" width="180" height="70" rx="8" fill="#1b2a3a" stroke="#81c784" stroke-width="2"/>
+  <text x="630" y="312" text-anchor="middle" fill="#81c784" font-size="12" font-weight="bold">System / Privileged</text>
+  <text x="630" y="330" text-anchor="middle" fill="#e0e0e0" font-size="10">LGDT, LIDT, IRET</text>
+  <text x="630" y="346" text-anchor="middle" fill="#8e99a4" font-size="10">CLI, STI, HLT, CPUID</text>
+  <line x1="540" y1="310" x2="445" y2="215" stroke="#81c784" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <text x="375" y="400" text-anchor="middle" fill="#5c6370" font-size="10">You don't need to memorize these. We'll introduce each instruction when we first use it.</text>
+</svg>

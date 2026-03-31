@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 400" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="440" height="400" fill="#1a1a2e"/>
+
+  <!-- Center EIP box -->
+  <rect x="175" y="165" width="90" height="40" rx="6" fill="#2a1a3a" stroke="#ce93d8" stroke-width="2"/>
+  <text x="220" y="190" text-anchor="middle" fill="#ce93d8" font-size="13" font-weight="bold">EIP</text>
+
+  <!-- Fetch node (top) -->
+  <rect x="160" y="30" width="120" height="46" rx="23" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2.5"/>
+  <text x="220" y="58" text-anchor="middle" fill="#4fc3f7" font-size="14" font-weight="bold">1. Fetch</text>
+
+  <!-- Decode node (right) -->
+  <rect x="310" y="162" width="120" height="46" rx="23" fill="#1a2e1a" stroke="#81c784" stroke-width="2.5"/>
+  <text x="370" y="190" text-anchor="middle" fill="#81c784" font-size="14" font-weight="bold">2. Decode</text>
+
+  <!-- Execute node (bottom) -->
+  <rect x="160" y="300" width="120" height="46" rx="23" fill="#2e2a1a" stroke="#ffb74d" stroke-width="2.5"/>
+  <text x="220" y="328" text-anchor="middle" fill="#ffb74d" font-size="14" font-weight="bold">3. Execute</text>
+
+  <!-- Advance node (left) -->
+  <rect x="10" y="162" width="120" height="46" rx="23" fill="#2a1a1a" stroke="#ef5350" stroke-width="2.5"/>
+  <text x="70" y="190" text-anchor="middle" fill="#ef5350" font-size="14" font-weight="bold">4. Advance</text>
+
+  <!-- Arrow: Fetch -> Decode (top-right curve) -->
+  <path d="M 275,65 Q 380,65 380,162" fill="none" stroke="#e0e0e0" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow: Decode -> Execute (bottom-right curve) -->
+  <path d="M 380,208 Q 380,310 275,318" fill="none" stroke="#e0e0e0" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow: Execute -> Advance (bottom-left curve) -->
+  <path d="M 165,318 Q 60,310 60,208" fill="none" stroke="#e0e0e0" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrow: Advance -> Fetch (top-left curve) -->
+  <path d="M 60,162 Q 60,65 165,55" fill="none" stroke="#e0e0e0" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e0e0e0"/>
+    </marker>
+  </defs>
+
+  <!-- Caption -->
+  <text x="220" y="380" text-anchor="middle" fill="#5c6370" font-size="11">The Fetch-Decode-Execute Cycle</text>
+  <text x="220" y="395" text-anchor="middle" fill="#5c6370" font-size="10">Billions of times per second, forever.</text>
+</svg>

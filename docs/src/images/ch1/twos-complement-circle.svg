@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 440" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="440" height="440" fill="#1a1a2e"/>
+
+  <text x="220" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">8-bit Two's Complement Number Circle</text>
+
+  <!-- Circle -->
+  <circle cx="220" cy="232" r="170" fill="none" stroke="#3a3a5a" stroke-width="1.5"/>
+
+  <!-- Positive arc (right half: 0 to 127) -->
+  <path d="M 220,62 A 170,170 0 0,1 220,402" fill="none" stroke="#81c784" stroke-width="4"/>
+  <!-- Negative arc (left half: -128 to -1) -->
+  <path d="M 220,402 A 170,170 0 0,1 220,62" fill="none" stroke="#ef5350" stroke-width="4"/>
+
+  <!-- 0 at top -->
+  <circle cx="220" cy="62" r="16" fill="#1a1a2e" stroke="#fff176" stroke-width="2"/>
+  <text x="220" y="67" text-anchor="middle" fill="#fff176" font-size="12" font-weight="bold">0</text>
+  <text x="220" y="48" text-anchor="middle" fill="#8e99a4" font-size="9">00000000</text>
+
+  <!-- 1 (slightly right of top) -->
+  <text x="300" y="80" text-anchor="middle" fill="#81c784" font-size="11">1</text>
+
+  <!-- 64 (right) -->
+  <circle cx="356" cy="130" r="14" fill="#1a1a2e" stroke="#81c784" stroke-width="1.5"/>
+  <text x="356" y="134" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">64</text>
+
+  <!-- 127 (just before bottom-right) -->
+  <circle cx="390" cy="228" r="16" fill="#1a1a2e" stroke="#81c784" stroke-width="2"/>
+  <text x="390" y="233" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">127</text>
+  <text x="424" y="248" text-anchor="start" fill="#8e99a4" font-size="8">01111111</text>
+
+  <!-- -128 (just after bottom-left) -->
+  <circle cx="50" cy="228" r="16" fill="#1a1a2e" stroke="#ef5350" stroke-width="2"/>
+  <text x="50" y="233" text-anchor="middle" fill="#ef5350" font-size="9" font-weight="bold">-128</text>
+  <text x="16" y="248" text-anchor="end" fill="#8e99a4" font-size="8">10000000</text>
+
+  <!-- -1 (just left of top) -->
+  <circle cx="152" cy="72" r="14" fill="#1a1a2e" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="152" y="76" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="bold">-1</text>
+  <text x="120" y="60" text-anchor="end" fill="#8e99a4" font-size="8">11111111</text>
+
+  <!-- -64 -->
+  <circle cx="84" cy="130" r="14" fill="#1a1a2e" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="84" y="134" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="bold">-64</text>
+
+  <!-- Boundary at bottom -->
+  <circle cx="220" cy="402" r="4" fill="#fff176"/>
+  <text x="220" y="425" text-anchor="middle" fill="#fff176" font-size="10" font-weight="bold">Overflow boundary</text>
+  <text x="220" y="438" text-anchor="middle" fill="#8e99a4" font-size="9">127 + 1 wraps to -128</text>
+
+  <!-- Arrows showing direction -->
+  <text x="345" y="170" fill="#81c784" font-size="10">+1</text>
+  <path d="M 340,165 Q 360,155 370,145" fill="none" stroke="#81c784" stroke-width="1" marker-end="url(#tca)"/>
+
+  <text x="95" y="170" fill="#ef5350" font-size="10">+1</text>
+  <path d="M 90,165 Q 70,155 65,145" fill="none" stroke="#ef5350" stroke-width="1" marker-end="url(#tca)"/>
+
+  <!-- Legend -->
+  <line x1="140" y1="340" x2="165" y2="340" stroke="#81c784" stroke-width="3"/>
+  <text x="172" y="344" fill="#81c784" font-size="10">Positive (0 to 127)</text>
+  <line x1="140" y1="358" x2="165" y2="358" stroke="#ef5350" stroke-width="3"/>
+  <text x="172" y="362" fill="#ef5350" font-size="10">Negative (-128 to -1)</text>
+
+  <defs>
+    <marker id="tca" markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto">
+      <polygon points="0 0, 6 2.5, 0 5" fill="#8e99a4"/>
+    </marker>
+  </defs>
+</svg>

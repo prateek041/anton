@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="760" height="300" fill="#1a1a2e"/>
+
+  <defs>
+    <marker id="gl-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e0e0e0"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">Protected Mode: GDT Segment Lookup</text>
+
+  <!-- Segment selector -->
+  <rect x="20" y="60" width="120" height="60" rx="6" fill="#1b2a3a" stroke="#ce93d8" stroke-width="2"/>
+  <text x="80" y="80" text-anchor="middle" fill="#ce93d8" font-size="11" font-weight="bold">Segment Selector</text>
+  <text x="80" y="100" text-anchor="middle" fill="#e0e0e0" font-size="10">Index: 2</text>
+  <text x="80" y="114" text-anchor="middle" fill="#8e99a4" font-size="9">TI=0 RPL=00</text>
+
+  <!-- Arrow to GDT -->
+  <line x1="140" y1="90" x2="178" y2="90" stroke="#e0e0e0" stroke-width="2" marker-end="url(#gl-arr)"/>
+
+  <!-- GDT table -->
+  <rect x="180" y="40" width="200" height="170" rx="6" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="280" y="60" text-anchor="middle" fill="#4fc3f7" font-size="12" font-weight="bold">Global Descriptor Table</text>
+
+  <!-- GDT entries -->
+  <rect x="195" y="70" width="170" height="24" rx="3" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="215" y="86" fill="#8e99a4" font-size="10">[0] Null Descriptor</text>
+
+  <rect x="195" y="98" width="170" height="24" rx="3" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="215" y="114" fill="#e0e0e0" font-size="10">[1] Code Segment</text>
+
+  <rect x="195" y="126" width="170" height="24" rx="3" fill="#2a2a4a" stroke="#81c784" stroke-width="2"/>
+  <text x="215" y="142" fill="#81c784" font-size="10" font-weight="bold">[2] Data Segment</text>
+
+  <rect x="195" y="154" width="170" height="24" rx="3" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="215" y="170" fill="#8e99a4" font-size="10">[3] ...</text>
+
+  <!-- Pointer to selected entry -->
+  <text x="183" y="140" fill="#81c784" font-size="12" font-weight="bold">&#x2192;</text>
+
+  <!-- Arrow from selected entry to descriptor expansion -->
+  <line x1="380" y1="138" x2="418" y2="138" stroke="#e0e0e0" stroke-width="2" marker-end="url(#gl-arr)"/>
+
+  <!-- Expanded descriptor -->
+  <rect x="420" y="50" width="180" height="160" rx="6" fill="#1b2a3a" stroke="#81c784" stroke-width="2"/>
+  <text x="510" y="72" text-anchor="middle" fill="#81c784" font-size="12" font-weight="bold">Descriptor Entry</text>
+  <text x="510" y="72" text-anchor="middle" fill="#81c784" font-size="12" font-weight="bold">Descriptor Entry</text>
+
+  <text x="435" y="95" fill="#e0e0e0" font-size="10">Base:    0x00000000</text>
+  <text x="435" y="113" fill="#e0e0e0" font-size="10">Limit:   0xFFFFF</text>
+  <text x="435" y="131" fill="#e0e0e0" font-size="10">Access:  R/W, Ring 0</text>
+  <text x="435" y="149" fill="#e0e0e0" font-size="10">Flags:   32-bit, 4K</text>
+  <text x="435" y="167" fill="#e0e0e0" font-size="10">Type:    Data</text>
+  <text x="435" y="185" fill="#8e99a4" font-size="9">(8 bytes total)</text>
+
+  <!-- Arrow to linear address calculation -->
+  <line x1="600" y1="138" x2="638" y2="138" stroke="#e0e0e0" stroke-width="2" marker-end="url(#gl-arr)"/>
+
+  <!-- Linear address result -->
+  <rect x="640" y="80" width="100" height="100" rx="6" fill="#1a2e1a" stroke="#81c784" stroke-width="2"/>
+  <text x="690" y="105" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">Linear Addr</text>
+  <text x="690" y="125" text-anchor="middle" fill="#e0e0e0" font-size="9">Base</text>
+  <text x="690" y="140" text-anchor="middle" fill="#e0e0e0" font-size="9">+ Offset</text>
+  <line x1="660" y1="148" x2="720" y2="148" stroke="#8e99a4" stroke-width="1"/>
+  <text x="690" y="165" text-anchor="middle" fill="#81c784" font-size="11" font-weight="bold">= Result</text>
+
+  <!-- Note at bottom -->
+  <text x="380" y="240" text-anchor="middle" fill="#fff176" font-size="10">In a flat memory model, base = 0x00000000 and limit = 0xFFFFF (with 4K granularity = 4 GB).</text>
+  <text x="380" y="258" text-anchor="middle" fill="#fff176" font-size="10">Linear address = effective address. Segmentation becomes a no-op.</text>
+
+  <text x="380" y="285" text-anchor="middle" fill="#5c6370" font-size="9">The GDTR register (loaded with LGDT) tells the CPU where the GDT lives in memory.</text>
+</svg>

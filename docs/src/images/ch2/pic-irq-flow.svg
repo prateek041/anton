@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="360" fill="#1a1a2e"/>
+
+  <defs>
+    <marker id="pf-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e0e0e0"/>
+    </marker>
+    <marker id="pf-arr-back" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#81c784"/>
+    </marker>
+  </defs>
+
+  <text x="400" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">Hardware Interrupt Flow (PIC)</text>
+
+  <!-- Device -->
+  <rect x="20" y="100" width="90" height="50" rx="6" fill="#1b2a3a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="65" y="122" text-anchor="middle" fill="#ffb74d" font-size="10" font-weight="bold">Device</text>
+  <text x="65" y="138" text-anchor="middle" fill="#e0e0e0" font-size="9">(keyboard)</text>
+
+  <!-- IRQ line -->
+  <line x1="110" y1="125" x2="155" y2="125" stroke="#ffb74d" stroke-width="2" marker-end="url(#pf-arr)"/>
+  <text x="132" y="118" text-anchor="middle" fill="#ffb74d" font-size="8">IRQ 1</text>
+
+  <!-- Master PIC -->
+  <rect x="158" y="55" width="140" height="190" rx="6" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="228" y="75" text-anchor="middle" fill="#4fc3f7" font-size="11" font-weight="bold">Master PIC</text>
+  <text x="228" y="90" text-anchor="middle" fill="#8e99a4" font-size="9">(8259A)</text>
+
+  <text x="173" y="112" fill="#e0e0e0" font-size="9">IRQ 0: Timer</text>
+  <text x="173" y="128" fill="#fff176" font-size="9" font-weight="bold">IRQ 1: Keyboard</text>
+  <text x="173" y="144" fill="#e0e0e0" font-size="9">IRQ 2: Cascade</text>
+  <text x="173" y="160" fill="#e0e0e0" font-size="9">IRQ 3: COM2</text>
+  <text x="173" y="176" fill="#e0e0e0" font-size="9">IRQ 4: COM1</text>
+  <text x="173" y="192" fill="#e0e0e0" font-size="9">IRQ 5: LPT2</text>
+  <text x="173" y="208" fill="#e0e0e0" font-size="9">IRQ 6: Floppy</text>
+  <text x="173" y="224" fill="#e0e0e0" font-size="9">IRQ 7: LPT1</text>
+
+  <!-- Cascade arrow to slave -->
+  <line x1="228" y1="245" x2="228" y2="275" stroke="#8e99a4" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Slave PIC (simplified) -->
+  <rect x="158" y="275" width="140" height="40" rx="4" fill="#1b2a3a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="228" y="295" text-anchor="middle" fill="#ce93d8" font-size="10" font-weight="bold">Slave PIC</text>
+  <text x="228" y="310" text-anchor="middle" fill="#8e99a4" font-size="8">IRQ 8-15 (RTC, etc.)</text>
+
+  <!-- INT line to CPU -->
+  <line x1="298" y1="125" x2="368" y2="125" stroke="#e0e0e0" stroke-width="2" marker-end="url(#pf-arr)"/>
+  <text x="333" y="116" text-anchor="middle" fill="#e0e0e0" font-size="8">INT signal</text>
+
+  <!-- CPU -->
+  <rect x="370" y="90" width="100" height="70" rx="6" fill="#1b2a3a" stroke="#ef5350" stroke-width="2"/>
+  <text x="420" y="118" text-anchor="middle" fill="#ef5350" font-size="12" font-weight="bold">CPU</text>
+  <text x="420" y="136" text-anchor="middle" fill="#e0e0e0" font-size="9">reads vector</text>
+  <text x="420" y="148" text-anchor="middle" fill="#e0e0e0" font-size="9">from PIC</text>
+
+  <!-- Arrow to IDT -->
+  <line x1="470" y1="125" x2="518" y2="125" stroke="#e0e0e0" stroke-width="2" marker-end="url(#pf-arr)"/>
+
+  <!-- IDT -->
+  <rect x="520" y="90" width="100" height="70" rx="6" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="570" y="118" text-anchor="middle" fill="#4fc3f7" font-size="11" font-weight="bold">IDT</text>
+  <text x="570" y="136" text-anchor="middle" fill="#e0e0e0" font-size="9">vector 33</text>
+  <text x="570" y="148" text-anchor="middle" fill="#8e99a4" font-size="8">(32 + IRQ 1)</text>
+
+  <!-- Arrow to Handler -->
+  <line x1="620" y1="125" x2="658" y2="125" stroke="#e0e0e0" stroke-width="2" marker-end="url(#pf-arr)"/>
+
+  <!-- Handler -->
+  <rect x="660" y="90" width="120" height="70" rx="6" fill="#1b2a3a" stroke="#81c784" stroke-width="2"/>
+  <text x="720" y="115" text-anchor="middle" fill="#81c784" font-size="11" font-weight="bold">Handler</text>
+  <text x="720" y="132" text-anchor="middle" fill="#e0e0e0" font-size="9">keyboard_isr()</text>
+  <text x="720" y="148" text-anchor="middle" fill="#e0e0e0" font-size="9">read scancode</text>
+
+  <!-- EOI arrow back to PIC -->
+  <path d="M 720 160 L 720 200 L 228 200 L 228 240" stroke="#81c784" stroke-width="1.5" fill="none" stroke-dasharray="5,3" marker-end="url(#pf-arr)"/>
+  <text x="470" y="195" text-anchor="middle" fill="#81c784" font-size="9" font-weight="bold">EOI (End of Interrupt)</text>
+  <text x="470" y="210" text-anchor="middle" fill="#81c784" font-size="8">OUT 0x20, 0x20</text>
+
+  <!-- Remapping note -->
+  <rect x="400" y="260" width="370" height="55" rx="5" fill="#2a2a4a" stroke="#fff176" stroke-width="1.5"/>
+  <text x="585" y="280" text-anchor="middle" fill="#fff176" font-size="11" font-weight="bold">PIC Remapping Required!</text>
+  <text x="585" y="296" text-anchor="middle" fill="#e0e0e0" font-size="9">Default: IRQ 0-7 mapped to vectors 8-15 (conflicts with exceptions!)</text>
+  <text x="585" y="310" text-anchor="middle" fill="#e0e0e0" font-size="9">Remapped: IRQ 0-15 mapped to vectors 32-47 (safe)</text>
+
+  <text x="400" y="346" text-anchor="middle" fill="#5c6370" font-size="9">The handler MUST send EOI to the PIC, or the PIC will stop delivering interrupts on that line.</text>
+</svg>

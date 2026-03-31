@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 300" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="750" height="300" fill="#1a1a2e"/>
+
+  <text x="375" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">Assembly vs. C in Anton</text>
+
+  <!-- Assembly bar (small) -->
+  <text x="40" y="75" fill="#ef5350" font-size="12" font-weight="bold">Assembly</text>
+  <text x="40" y="90" fill="#8e99a4" font-size="10">~500 lines</text>
+
+  <!-- Bootloader -->
+  <rect x="140" y="60" width="160" height="40" rx="4" fill="#1b2a3a" stroke="#ef5350" stroke-width="2"/>
+  <text x="220" y="78" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="bold">Bootloader</text>
+  <text x="220" y="93" text-anchor="middle" fill="#e0e0e0" font-size="9">~200 lines</text>
+
+  <!-- Inline helpers -->
+  <rect x="304" y="60" width="80" height="40" rx="4" fill="#1b2a3a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="344" y="78" text-anchor="middle" fill="#ffb74d" font-size="9" font-weight="bold">Inline</text>
+  <text x="344" y="93" text-anchor="middle" fill="#e0e0e0" font-size="9">~100</text>
+
+  <!-- Interrupt stubs -->
+  <rect x="388" y="60" width="50" height="40" rx="4" fill="#1b2a3a" stroke="#ce93d8" stroke-width="2"/>
+  <text x="413" y="78" text-anchor="middle" fill="#ce93d8" font-size="8" font-weight="bold">ISR</text>
+  <text x="413" y="93" text-anchor="middle" fill="#e0e0e0" font-size="8">~50</text>
+
+  <!-- Context switch -->
+  <rect x="442" y="60" width="36" height="40" rx="4" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="460" y="78" text-anchor="middle" fill="#4fc3f7" font-size="7" font-weight="bold">CTX</text>
+  <text x="460" y="93" text-anchor="middle" fill="#e0e0e0" font-size="7">~30</text>
+
+  <!-- GDT/IDT -->
+  <rect x="482" y="60" width="28" height="40" rx="4" fill="#1b2a3a" stroke="#81c784" stroke-width="2"/>
+  <text x="496" y="82" text-anchor="middle" fill="#81c784" font-size="7">GDT</text>
+
+  <!-- C bar (much larger) -->
+  <text x="40" y="155" fill="#4fc3f7" font-size="12" font-weight="bold">C Kernel</text>
+  <text x="40" y="170" fill="#8e99a4" font-size="10">Thousands of lines</text>
+
+  <rect x="140" y="135" width="560" height="50" rx="6" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2.5"/>
+  <text x="420" y="160" text-anchor="middle" fill="#4fc3f7" font-size="13" font-weight="bold">C Kernel Code</text>
+  <text x="420" y="176" text-anchor="middle" fill="#e0e0e0" font-size="10">Memory manager, scheduler, drivers, filesystem, shell, syscalls, ...</text>
+
+  <!-- Scale comparison -->
+  <line x1="140" y1="200" x2="510" y2="200" stroke="#ef5350" stroke-width="2"/>
+  <text x="325" y="216" text-anchor="middle" fill="#ef5350" font-size="9">~500 lines of assembly</text>
+
+  <line x1="140" y1="230" x2="700" y2="230" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="420" y="246" text-anchor="middle" fill="#4fc3f7" font-size="9">~5,000+ lines of C</text>
+
+  <!-- Bottom note -->
+  <text x="375" y="280" text-anchor="middle" fill="#fff176" font-size="10">Assembly is the scaffolding. C is the building.</text>
+  <text x="375" y="296" text-anchor="middle" fill="#5c6370" font-size="9">But if the scaffolding fails, the building collapses.</text>
+</svg>

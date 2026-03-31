@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="380" fill="#1a1a2e"/>
+
+  <text x="400" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">Anatomy of GCC Inline Assembly</text>
+
+  <!-- Full statement display -->
+  <rect x="40" y="42" width="720" height="50" rx="6" fill="#1b2a3a" stroke="#e0e0e0" stroke-width="2"/>
+  <text x="400" y="72" text-anchor="middle" fill="#e0e0e0" font-size="13" font-family="monospace">asm volatile("out %1, %0" : : "a"(val), "Nd"(port));</text>
+
+  <!-- Bracket lines pointing to sections -->
+  <!-- "asm volatile" keyword -->
+  <rect x="58" y="100" width="110" height="4" rx="2" fill="#ce93d8"/>
+  <line x1="113" y1="104" x2="113" y2="120" stroke="#ce93d8" stroke-width="1.5"/>
+  <rect x="40" y="122" width="146" height="50" rx="5" fill="#2a1b3a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="113" y="140" text-anchor="middle" fill="#ce93d8" font-size="10" font-weight="bold">Keyword</text>
+  <text x="113" y="155" text-anchor="middle" fill="#e0e0e0" font-size="8">asm = inline assembly</text>
+  <text x="113" y="168" text-anchor="middle" fill="#e0e0e0" font-size="8">volatile = don't optimize away</text>
+
+  <!-- Template string -->
+  <rect x="188" y="100" width="152" height="4" rx="2" fill="#4fc3f7"/>
+  <line x1="264" y1="104" x2="264" y2="120" stroke="#4fc3f7" stroke-width="1.5"/>
+  <rect x="200" y="122" width="128" height="60" rx="5" fill="#1b3a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="264" y="140" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">Template</text>
+  <text x="264" y="155" text-anchor="middle" fill="#e0e0e0" font-size="8">"out %1, %0"</text>
+  <text x="264" y="168" text-anchor="middle" fill="#e0e0e0" font-size="8">%0, %1 = operand refs</text>
+  <text x="264" y="178" text-anchor="middle" fill="#8e99a4" font-size="7">Actual instruction(s) to emit</text>
+
+  <!-- First colon : (outputs) -->
+  <rect x="366" y="100" width="10" height="4" rx="2" fill="#81c784"/>
+  <line x1="371" y1="104" x2="371" y2="120" stroke="#81c784" stroke-width="1.5"/>
+  <rect x="340" y="122" width="62" height="50" rx="5" fill="#1b3a2a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="371" y="140" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">Outputs</text>
+  <text x="371" y="155" text-anchor="middle" fill="#e0e0e0" font-size="8">(empty)</text>
+  <text x="371" y="168" text-anchor="middle" fill="#8e99a4" font-size="7">No outputs</text>
+
+  <!-- Second colon : (inputs) -->
+  <rect x="418" y="100" width="200" height="4" rx="2" fill="#ffb74d"/>
+  <line x1="518" y1="104" x2="518" y2="120" stroke="#ffb74d" stroke-width="1.5"/>
+  <rect x="420" y="122" width="196" height="70" rx="5" fill="#3a2a1a" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="518" y="140" text-anchor="middle" fill="#ffb74d" font-size="10" font-weight="bold">Inputs</text>
+  <text x="518" y="158" text-anchor="middle" fill="#e0e0e0" font-size="9">"a"(val)  = put val in EAX (%0)</text>
+  <text x="518" y="175" text-anchor="middle" fill="#e0e0e0" font-size="9">"Nd"(port) = port in EDX or</text>
+  <text x="518" y="188" text-anchor="middle" fill="#e0e0e0" font-size="9">  small immediate (%1)</text>
+
+  <!-- Clobbers (implicit) -->
+  <rect x="636" y="122" width="130" height="50" rx="5" fill="#3a1b1b" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="701" y="140" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="bold">Clobbers</text>
+  <text x="701" y="155" text-anchor="middle" fill="#e0e0e0" font-size="8">(empty here)</text>
+  <text x="701" y="168" text-anchor="middle" fill="#8e99a4" font-size="7">4th section if needed</text>
+
+  <!-- Constraint reference -->
+  <text x="400" y="220" text-anchor="middle" fill="#fff176" font-size="12" font-weight="bold">Common Constraint Letters</text>
+
+  <rect x="60" y="232" width="680" height="120" rx="6" fill="#2a2a4a" stroke="#fff176" stroke-width="1"/>
+
+  <!-- Row headers -->
+  <text x="100" y="254" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">Letter</text>
+  <text x="300" y="254" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">Meaning</text>
+  <text x="580" y="254" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">Register</text>
+
+  <line x1="70" y1="260" x2="730" y2="260" stroke="#3a3a5a" stroke-width="1"/>
+
+  <text x="100" y="280" text-anchor="middle" fill="#e0e0e0" font-size="11" font-family="monospace">"a"</text>
+  <text x="300" y="280" text-anchor="middle" fill="#e0e0e0" font-size="10">EAX / AX / AL</text>
+  <text x="580" y="280" text-anchor="middle" fill="#8e99a4" font-size="10">Return values, mul/div</text>
+
+  <text x="100" y="300" text-anchor="middle" fill="#e0e0e0" font-size="11" font-family="monospace">"r"</text>
+  <text x="300" y="300" text-anchor="middle" fill="#e0e0e0" font-size="10">Any general-purpose register</text>
+  <text x="580" y="300" text-anchor="middle" fill="#8e99a4" font-size="10">Compiler picks best</text>
+
+  <text x="100" y="320" text-anchor="middle" fill="#e0e0e0" font-size="11" font-family="monospace">"N"</text>
+  <text x="300" y="320" text-anchor="middle" fill="#e0e0e0" font-size="10">Unsigned 8-bit immediate (0-255)</text>
+  <text x="580" y="320" text-anchor="middle" fill="#8e99a4" font-size="10">Port numbers for I/O</text>
+
+  <text x="100" y="340" text-anchor="middle" fill="#e0e0e0" font-size="11" font-family="monospace">"m"</text>
+  <text x="300" y="340" text-anchor="middle" fill="#e0e0e0" font-size="10">Memory operand</text>
+  <text x="580" y="340" text-anchor="middle" fill="#8e99a4" font-size="10">Pointer dereference</text>
+
+  <text x="400" y="370" text-anchor="middle" fill="#8e99a4" font-size="9">"=r" prefix means output. "=a" means output must be in EAX. No prefix means input.</text>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 360" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="750" height="360" fill="#1a1a2e"/>
+
+  <text x="375" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">Interrupt Stack Layouts</text>
+
+  <!-- ===== Layout 1: Same-ring (no privilege change) ===== -->
+  <text x="130" y="55" text-anchor="middle" fill="#4fc3f7" font-size="12" font-weight="bold">Same-Ring</text>
+  <text x="130" y="70" text-anchor="middle" fill="#8e99a4" font-size="9">(Ring 0 to Ring 0)</text>
+
+  <rect x="55" y="82" width="150" height="30" rx="3" fill="#2a2a4a" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="130" y="101" text-anchor="middle" fill="#ef5350" font-size="10">EFLAGS</text>
+
+  <rect x="55" y="114" width="150" height="30" rx="3" fill="#2a2a4a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="130" y="133" text-anchor="middle" fill="#ce93d8" font-size="10">CS</text>
+
+  <rect x="55" y="146" width="150" height="30" rx="3" fill="#2a2a4a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="130" y="165" text-anchor="middle" fill="#4fc3f7" font-size="10">EIP</text>
+
+  <text x="218" y="165" fill="#ef5350" font-size="10" font-weight="bold">&#x2190; ESP</text>
+
+  <text x="130" y="200" text-anchor="middle" fill="#8e99a4" font-size="9">3 dwords pushed</text>
+  <text x="130" y="214" text-anchor="middle" fill="#8e99a4" font-size="9">(12 bytes)</text>
+
+  <!-- ===== Layout 2: Cross-ring (privilege change) ===== -->
+  <text x="390" y="55" text-anchor="middle" fill="#ffb74d" font-size="12" font-weight="bold">Cross-Ring</text>
+  <text x="390" y="70" text-anchor="middle" fill="#8e99a4" font-size="9">(Ring 3 to Ring 0)</text>
+
+  <rect x="315" y="82" width="150" height="30" rx="3" fill="#2a2a4a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="390" y="101" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">SS (user)</text>
+
+  <rect x="315" y="114" width="150" height="30" rx="3" fill="#2a2a4a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="390" y="133" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">ESP (user)</text>
+
+  <rect x="315" y="146" width="150" height="30" rx="3" fill="#2a2a4a" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="390" y="165" text-anchor="middle" fill="#ef5350" font-size="10">EFLAGS</text>
+
+  <rect x="315" y="178" width="150" height="30" rx="3" fill="#2a2a4a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="390" y="197" text-anchor="middle" fill="#ce93d8" font-size="10">CS</text>
+
+  <rect x="315" y="210" width="150" height="30" rx="3" fill="#2a2a4a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="390" y="229" text-anchor="middle" fill="#4fc3f7" font-size="10">EIP</text>
+
+  <text x="478" y="229" fill="#ef5350" font-size="10" font-weight="bold">&#x2190; ESP</text>
+
+  <text x="390" y="260" text-anchor="middle" fill="#8e99a4" font-size="9">5 dwords pushed</text>
+  <text x="390" y="274" text-anchor="middle" fill="#8e99a4" font-size="9">(20 bytes)</text>
+
+  <!-- ===== Layout 3: With error code ===== -->
+  <text x="640" y="55" text-anchor="middle" fill="#ef5350" font-size="12" font-weight="bold">With Error Code</text>
+  <text x="640" y="70" text-anchor="middle" fill="#8e99a4" font-size="9">(e.g. Page Fault, #PF)</text>
+
+  <rect x="565" y="82" width="150" height="30" rx="3" fill="#2a2a4a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="640" y="101" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">SS (user)</text>
+
+  <rect x="565" y="114" width="150" height="30" rx="3" fill="#2a2a4a" stroke="#81c784" stroke-width="1.5"/>
+  <text x="640" y="133" text-anchor="middle" fill="#81c784" font-size="10" font-weight="bold">ESP (user)</text>
+
+  <rect x="565" y="146" width="150" height="30" rx="3" fill="#2a2a4a" stroke="#ef5350" stroke-width="1.5"/>
+  <text x="640" y="165" text-anchor="middle" fill="#ef5350" font-size="10">EFLAGS</text>
+
+  <rect x="565" y="178" width="150" height="30" rx="3" fill="#2a2a4a" stroke="#ce93d8" stroke-width="1.5"/>
+  <text x="640" y="197" text-anchor="middle" fill="#ce93d8" font-size="10">CS</text>
+
+  <rect x="565" y="210" width="150" height="30" rx="3" fill="#2a2a4a" stroke="#4fc3f7" stroke-width="1.5"/>
+  <text x="640" y="229" text-anchor="middle" fill="#4fc3f7" font-size="10">EIP</text>
+
+  <rect x="565" y="242" width="150" height="30" rx="3" fill="#1b2a3a" stroke="#fff176" stroke-width="2"/>
+  <text x="640" y="261" text-anchor="middle" fill="#fff176" font-size="10" font-weight="bold">Error Code</text>
+
+  <text x="728" y="261" fill="#ef5350" font-size="10" font-weight="bold">&#x2190; ESP</text>
+
+  <text x="640" y="292" text-anchor="middle" fill="#8e99a4" font-size="9">6 dwords pushed</text>
+  <text x="640" y="306" text-anchor="middle" fill="#8e99a4" font-size="9">(24 bytes)</text>
+
+  <!-- Direction arrow -->
+  <text x="375" y="330" text-anchor="middle" fill="#8e99a4" font-size="9">Stack grows downward. Higher addresses at top. CPU pushes these automatically.</text>
+  <text x="375" y="350" text-anchor="middle" fill="#fff176" font-size="9">Error code must be popped by the handler before IRET (CPU does not pop it automatically).</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="600" height="420" fill="#1a1a2e"/>
+
+  <text x="300" y="24" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">The Memory Hierarchy</text>
+
+  <!-- Pyramid layers (widening trapezoids) -->
+
+  <!-- Registers (top, narrowest) -->
+  <polygon points="260,50 340,50 360,90 240,90" fill="#2a1a1a" stroke="#ef5350" stroke-width="2"/>
+  <text x="300" y="72" text-anchor="middle" fill="#ef5350" font-size="11" font-weight="bold">Registers</text>
+
+  <!-- L1 Cache -->
+  <polygon points="240,95 360,95 390,135 210,135" fill="#2e2a1a" stroke="#ffb74d" stroke-width="2"/>
+  <text x="300" y="118" text-anchor="middle" fill="#ffb74d" font-size="11" font-weight="bold">L1 Cache</text>
+
+  <!-- L2 Cache -->
+  <polygon points="210,140 390,140 420,180 180,180" fill="#2e2e1a" stroke="#fff176" stroke-width="2"/>
+  <text x="300" y="163" text-anchor="middle" fill="#fff176" font-size="11" font-weight="bold">L2 Cache</text>
+
+  <!-- L3 Cache -->
+  <polygon points="180,185 420,185 450,225 150,225" fill="#1a2e1a" stroke="#81c784" stroke-width="2"/>
+  <text x="300" y="208" text-anchor="middle" fill="#81c784" font-size="11" font-weight="bold">L3 Cache</text>
+
+  <!-- RAM -->
+  <polygon points="150,230 450,230 480,270 120,270" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+  <text x="300" y="254" text-anchor="middle" fill="#4fc3f7" font-size="11" font-weight="bold">RAM (Main Memory)</text>
+
+  <!-- SSD -->
+  <polygon points="120,275 480,275 500,315 100,315" fill="#1a1a3a" stroke="#7986cb" stroke-width="2"/>
+  <text x="300" y="299" text-anchor="middle" fill="#7986cb" font-size="11" font-weight="bold">SSD</text>
+
+  <!-- HDD -->
+  <polygon points="100,320 500,320 520,360 80,360" fill="#1a1a2e" stroke="#8e99a4" stroke-width="2"/>
+  <text x="300" y="344" text-anchor="middle" fill="#8e99a4" font-size="11" font-weight="bold">HDD</text>
+
+  <!-- Right side: size labels -->
+  <text x="530" y="74" fill="#ef5350" font-size="9">~32 values</text>
+  <text x="530" y="120" fill="#ffb74d" font-size="9">32-64 KB</text>
+  <text x="530" y="165" fill="#fff176" font-size="9">256 KB - few MB</text>
+  <text x="530" y="210" fill="#81c784" font-size="9">few - tens MB</text>
+  <text x="530" y="256" fill="#4fc3f7" font-size="9">8-64 GB</text>
+  <text x="530" y="301" fill="#7986cb" font-size="9">256 GB - 4 TB</text>
+  <text x="530" y="346" fill="#8e99a4" font-size="9">1-10 TB</text>
+
+  <!-- Left side: speed labels -->
+  <text x="70" y="74" text-anchor="end" fill="#ef5350" font-size="9">~0.3 ns</text>
+  <text x="70" y="120" text-anchor="end" fill="#ffb74d" font-size="9">~1 ns</text>
+  <text x="70" y="165" text-anchor="end" fill="#fff176" font-size="9">~3-4 ns</text>
+  <text x="70" y="210" text-anchor="end" fill="#81c784" font-size="9">~10-12 ns</text>
+  <text x="70" y="256" text-anchor="end" fill="#4fc3f7" font-size="9">~50-100 ns</text>
+  <text x="70" y="301" text-anchor="end" fill="#7986cb" font-size="9">~50-100 us</text>
+  <text x="70" y="346" text-anchor="end" fill="#8e99a4" font-size="9">~5-10 ms</text>
+
+  <!-- Arrows on sides -->
+  <text x="30" y="200" text-anchor="middle" fill="#5c6370" font-size="9" transform="rotate(-90,30,200)">Faster</text>
+  <text x="570" y="200" text-anchor="middle" fill="#5c6370" font-size="9" transform="rotate(90,570,200)">Larger</text>
+
+  <!-- Bottom caption -->
+  <text x="300" y="390" text-anchor="middle" fill="#8e99a4" font-size="11">Faster = smaller and more expensive</text>
+  <text x="300" y="408" text-anchor="middle" fill="#8e99a4" font-size="11">Larger = slower and cheaper</text>
+</svg>

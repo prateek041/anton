@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 420" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="850" height="420" fill="#1a1a2e"/>
+
+  <text x="425" y="22" text-anchor="middle" fill="#e0e0e0" font-size="13" font-weight="bold">Stack During add_numbers(3, 7) -- Step by Step</text>
+
+  <!-- Step 1: Initial -->
+  <g transform="translate(10,40)">
+    <text x="55" y="10" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">1. Initial</text>
+    <rect x="15" y="20" width="80" height="30" rx="3" fill="#1b3a2a" stroke="#81c784" stroke-width="1.5"/>
+    <text x="55" y="40" text-anchor="middle" fill="#81c784" font-size="8" font-family="monospace">... caller ...</text>
+    <text x="100" y="40" fill="#fff176" font-size="7">ESP=0x1000</text>
+    <text x="0" y="40" text-anchor="end" fill="#8e99a4" font-size="7">0x1000</text>
+  </g>
+
+  <!-- Step 2: After PUSH 7 -->
+  <g transform="translate(145,40)">
+    <text x="55" y="10" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">2. PUSH 7</text>
+    <rect x="15" y="20" width="80" height="30" rx="3" fill="#1b3a2a" stroke="#81c784" stroke-width="1.5"/>
+    <text x="55" y="40" text-anchor="middle" fill="#81c784" font-size="8" font-family="monospace">... caller ...</text>
+    <text x="0" y="40" text-anchor="end" fill="#8e99a4" font-size="7">0x1000</text>
+
+    <rect x="15" y="52" width="80" height="30" rx="3" fill="#2a1b3a" stroke="#ce93d8" stroke-width="1.5"/>
+    <text x="55" y="72" text-anchor="middle" fill="#ce93d8" font-size="9" font-weight="bold" font-family="monospace">7</text>
+    <text x="100" y="72" fill="#fff176" font-size="7">ESP=0x0FFC</text>
+    <text x="0" y="72" text-anchor="end" fill="#8e99a4" font-size="7">0x0FFC</text>
+  </g>
+
+  <!-- Step 3: After PUSH 3 -->
+  <g transform="translate(280,40)">
+    <text x="55" y="10" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">3. PUSH 3</text>
+    <rect x="15" y="20" width="80" height="30" rx="3" fill="#1b3a2a" stroke="#81c784" stroke-width="1.5"/>
+    <text x="55" y="40" text-anchor="middle" fill="#81c784" font-size="8" font-family="monospace">... caller ...</text>
+    <text x="0" y="40" text-anchor="end" fill="#8e99a4" font-size="7">0x1000</text>
+
+    <rect x="15" y="52" width="80" height="30" rx="3" fill="#2a1b3a" stroke="#ce93d8" stroke-width="1.5"/>
+    <text x="55" y="72" text-anchor="middle" fill="#ce93d8" font-size="9" font-family="monospace">7</text>
+    <text x="0" y="72" text-anchor="end" fill="#8e99a4" font-size="7">0x0FFC</text>
+
+    <rect x="15" y="84" width="80" height="30" rx="3" fill="#2a1b3a" stroke="#ce93d8" stroke-width="1.5"/>
+    <text x="55" y="104" text-anchor="middle" fill="#ce93d8" font-size="9" font-weight="bold" font-family="monospace">3</text>
+    <text x="100" y="104" fill="#fff176" font-size="7">ESP=0x0FF8</text>
+    <text x="0" y="104" text-anchor="end" fill="#8e99a4" font-size="7">0x0FF8</text>
+  </g>
+
+  <!-- Step 4: After CALL -->
+  <g transform="translate(415,40)">
+    <text x="55" y="10" text-anchor="middle" fill="#4fc3f7" font-size="10" font-weight="bold">4. CALL</text>
+    <rect x="15" y="20" width="80" height="30" rx="3" fill="#1b3a2a" stroke="#81c784" stroke-width="1.5"/>
+    <text x="55" y="40" text-anchor="middle" fill="#81c784" font-size="8" font-family="monospace">... caller ...</text>
+    <text x="0" y="40" text-anchor="end" fill="#8e99a4" font-size="7">0x1000</text>
+
+    <rect x="15" y="52" width="80" height="30" rx="3" fill="#2a1b3a" stroke="#ce93d8" stroke-width="1.5"/>
+    <text x="55" y="72" text-anchor="middle" fill="#ce93d8" font-size="9" font-family="monospace">7</text>
+
+    <rect x="15" y="84" width="80" height="30" rx="3" fill="#2a1b3a" stroke="#ce93d8" stroke-width="1.5"/>
+    <text x="55" y="104" text-anchor="middle" fill="#ce93d8" font-size="9" font-family="monospace">3</text>
+
+    <rect x="15" y="116" width="80" height="30" rx="3" fill="#1b2a3a" stroke="#ffb74d" stroke-width="1.5"/>
+    <text x="55" y="136" text-anchor="middle" fill="#ffb74d" font-size="8" font-family="monospace">ret addr</text>
+    <text x="100" y="136" fill="#fff176" font-size="7">ESP=0x0FF4</text>
+    <text x="0" y="136" text-anchor="end" fill="#8e99a4" font-size="7">0x0FF4</text>
+  </g>
+
+  <!-- Step 5: After PUSH EBP + MOV EBP,ESP -->
+  <g transform="translate(550,40)">
+    <text x="55" y="10" text-anchor="middle" fill="#4fc3f7" font-size="9" font-weight="bold">5. PUSH EBP</text>
+    <rect x="15" y="20" width="80" height="30" rx="3" fill="#1b3a2a" stroke="#81c784" stroke-width="1.5"/>
+    <text x="55" y="40" text-anchor="middle" fill="#81c784" font-size="8" font-family="monospace">... caller ...</text>
+    <text x="0" y="40" text-anchor="end" fill="#8e99a4" font-size="7">0x1000</text>
+
+    <rect x="15" y="52" width="80" height="30" rx="3" fill="#2a1b3a" stroke="#ce93d8" stroke-width="1.5"/>
+    <text x="55" y="72" text-anchor="middle" fill="#ce93d8" font-size="9" font-family="monospace">7</text>
+
+    <rect x="15" y="84" width="80" height="30" rx="3" fill="#2a1b3a" stroke="#ce93d8" stroke-width="1.5"/>
+    <text x="55" y="104" text-anchor="middle" fill="#ce93d8" font-size="9" font-family="monospace">3</text>
+
+    <rect x="15" y="116" width="80" height="30" rx="3" fill="#1b2a3a" stroke="#ffb74d" stroke-width="1.5"/>
+    <text x="55" y="136" text-anchor="middle" fill="#ffb74d" font-size="8" font-family="monospace">ret addr</text>
+
+    <rect x="15" y="148" width="80" height="30" rx="3" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+    <text x="55" y="168" text-anchor="middle" fill="#4fc3f7" font-size="8" font-family="monospace">old EBP</text>
+    <text x="100" y="168" fill="#fff176" font-size="7">ESP=EBP</text>
+    <text x="0" y="168" text-anchor="end" fill="#8e99a4" font-size="7">0x0FF0</text>
+  </g>
+
+  <!-- Step 6: EBP-relative layout -->
+  <g transform="translate(685,40)">
+    <text x="55" y="10" text-anchor="middle" fill="#4fc3f7" font-size="9" font-weight="bold">6. EBP-relative</text>
+    <rect x="15" y="20" width="80" height="30" rx="3" fill="#1b3a2a" stroke="#81c784" stroke-width="1.5"/>
+    <text x="55" y="40" text-anchor="middle" fill="#81c784" font-size="8" font-family="monospace">... caller ...</text>
+
+    <rect x="15" y="52" width="80" height="30" rx="3" fill="#2a1b3a" stroke="#ce93d8" stroke-width="1.5"/>
+    <text x="55" y="72" text-anchor="middle" fill="#ce93d8" font-size="9" font-family="monospace">7</text>
+    <text x="100" y="72" fill="#ce93d8" font-size="7">[EBP+12]</text>
+
+    <rect x="15" y="84" width="80" height="30" rx="3" fill="#2a1b3a" stroke="#ce93d8" stroke-width="1.5"/>
+    <text x="55" y="104" text-anchor="middle" fill="#ce93d8" font-size="9" font-family="monospace">3</text>
+    <text x="100" y="104" fill="#ce93d8" font-size="7">[EBP+8]</text>
+
+    <rect x="15" y="116" width="80" height="30" rx="3" fill="#1b2a3a" stroke="#ffb74d" stroke-width="1.5"/>
+    <text x="55" y="136" text-anchor="middle" fill="#ffb74d" font-size="8" font-family="monospace">ret addr</text>
+    <text x="100" y="136" fill="#ffb74d" font-size="7">[EBP+4]</text>
+
+    <rect x="15" y="148" width="80" height="30" rx="3" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="2"/>
+    <text x="55" y="168" text-anchor="middle" fill="#4fc3f7" font-size="8" font-family="monospace">old EBP</text>
+    <text x="100" y="168" fill="#4fc3f7" font-size="7">[EBP+0]</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(30, 260)">
+    <text x="0" y="0" fill="#e0e0e0" font-size="11" font-weight="bold">Legend</text>
+
+    <rect x="0" y="10" width="14" height="14" rx="2" fill="#2a1b3a" stroke="#ce93d8" stroke-width="1.5"/>
+    <text x="20" y="22" fill="#ce93d8" font-size="10">Arguments (pushed right-to-left in cdecl)</text>
+
+    <rect x="0" y="30" width="14" height="14" rx="2" fill="#1b2a3a" stroke="#ffb74d" stroke-width="1.5"/>
+    <text x="20" y="42" fill="#ffb74d" font-size="10">Return address (pushed by CALL)</text>
+
+    <rect x="0" y="50" width="14" height="14" rx="2" fill="#1b2a3a" stroke="#4fc3f7" stroke-width="1.5"/>
+    <text x="20" y="62" fill="#4fc3f7" font-size="10">Saved frame pointer (pushed by callee)</text>
+  </g>
+
+  <!-- Bottom annotation -->
+  <rect x="30" y="340" width="790" height="55" rx="5" fill="#2a2a4a" stroke="#fff176" stroke-width="1.5"/>
+  <text x="425" y="360" text-anchor="middle" fill="#fff176" font-size="10" font-weight="bold">The stack grows downward: each PUSH decreases ESP by 4 bytes.</text>
+  <text x="425" y="378" text-anchor="middle" fill="#e0e0e0" font-size="9">EBP is the anchor. Arguments are at positive offsets [EBP+8], [EBP+12], ...</text>
+  <text x="425" y="393" text-anchor="middle" fill="#e0e0e0" font-size="9">Local variables (if any) live at negative offsets [EBP-4], [EBP-8], ...</text>
+</svg>
