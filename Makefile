@@ -1,27 +1,44 @@
-MDBOOK := mdbook
 DOCS_DIR := docs
 
-.PHONY: docs docs-build docs-serve docs-clean docs-watch
+.PHONY: docs docs-build docs-serve docs-clean
 
-# Default: open dev server with live reload
 docs: docs-serve
 
-docs-build: _require-mdbook
-	$(MDBOOK) build $(DOCS_DIR)
+docs-serve: _require-node
+	@port=8080; \
+	max=8999; \
+	while [ "$$port" -le "$$max" ]; do \
+		if ! lsof -i :$$port -sTCP:LISTEN >/dev/null 2>&1; then \
+			break; \
+		fi; \
+		port=$$((port + 1)); \
+	done; \
+	if [ "$$port" -gt "$$max" ]; then \
+		echo "error: no free HTTP port between 8080 and $$max"; \
+		exit 1; \
+	fi; \
+	wsport=3001; \
+	wsmax=3999; \
+	while [ "$$wsport" -le "$$wsmax" ]; do \
+		if ! lsof -i :$$wsport -sTCP:LISTEN >/dev/null 2>&1; then \
+			break; \
+		fi; \
+		wsport=$$((wsport + 1)); \
+	done; \
+	if [ "$$wsport" -gt "$$wsmax" ]; then \
+		echo "error: no free WebSocket port between 3001 and $$wsmax (needed for hot reload)"; \
+		exit 1; \
+	fi; \
+	printf 'quartz: http://localhost:%s (hot reload ws: %s)\n' "$$port" "$$wsport"; \
+	ulimit -n 8192 >/dev/null 2>&1 || true; \
+	cd $(DOCS_DIR) && CHOKIDAR_USEPOLLING=1 npx quartz build --serve --port "$$port" --wsPort "$$wsport"
 
-docs-serve: _require-mdbook
-	$(MDBOOK) serve $(DOCS_DIR) --open
+docs-build: _require-node
+	cd $(DOCS_DIR) && npx quartz build
 
-docs-clean: _require-mdbook
-	$(MDBOOK) clean $(DOCS_DIR)
+docs-clean:
+	rm -rf $(DOCS_DIR)/public $(DOCS_DIR)/.quartz-cache
 
-docs-watch: _require-mdbook
-	$(MDBOOK) watch $(DOCS_DIR)
-
-_require-mdbook:
-	@command -v $(MDBOOK) >/dev/null 2>&1 || { \
-		echo "error: mdbook is not installed or not on PATH."; \
-		echo "  Arch: sudo pacman -S mdbook"; \
-		echo "  Or:   cargo install mdbook"; \
-		exit 127; \
-	}
+_require-node:
+	@command -v node >/dev/null 2>&1 || { echo "error: node not found. Install Node.js 22+"; exit 127; }
+	@test -d $(DOCS_DIR)/node_modules || { echo "error: run 'cd $(DOCS_DIR) && npm install' first"; exit 1; }

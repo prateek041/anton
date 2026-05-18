@@ -1,0 +1,4 @@
+config:
+  line-length: false
+  single-title:
+    front_matter_title: ""
