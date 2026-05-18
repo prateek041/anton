@@ -31,14 +31,15 @@ docs-serve: _require-node
 	fi; \
 	printf 'quartz: http://localhost:%s (hot reload ws: %s)\n' "$$port" "$$wsport"; \
 	ulimit -n 8192 >/dev/null 2>&1 || true; \
-	cd $(DOCS_DIR) && CHOKIDAR_USEPOLLING=1 npx quartz build --serve --port "$$port" --wsPort "$$wsport"
+	cd $(DOCS_DIR) && pnpm quartz build --serve --port "$$port" --wsPort "$$wsport"
 
 docs-build: _require-node
-	cd $(DOCS_DIR) && npx quartz build
+	cd $(DOCS_DIR) && pnpm quartz build
 
 docs-clean:
-	rm -rf $(DOCS_DIR)/public $(DOCS_DIR)/.quartz-cache
+	rm -rf $(DOCS_DIR)/public $(DOCS_DIR)/.quartz-cache $(DOCS_DIR)/book
 
 _require-node:
 	@command -v node >/dev/null 2>&1 || { echo "error: node not found. Install Node.js 22+"; exit 127; }
-	@test -d $(DOCS_DIR)/node_modules || { echo "error: run 'cd $(DOCS_DIR) && npm install' first"; exit 1; }
+	@command -v pnpm >/dev/null 2>&1 || { echo "error: pnpm not found. Install pnpm"; exit 127; }
+	@test -d $(DOCS_DIR)/node_modules || { echo "error: run 'cd $(DOCS_DIR) && pnpm install' first"; exit 1; }

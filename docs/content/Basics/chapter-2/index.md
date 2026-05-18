@@ -1,5 +1,5 @@
 ---
-title: "Chapter 2: The x86 Architecture"
+title: "The x86 Architecture"
 order: 12
 ---
 

@@ -1,0 +1,25 @@
+# OS build output (see docs/plan.md)
+/build/*
+!/build/.gitkeep
+*.o
+*.a
+*.elf
+*.bin
+*.img
+*.iso
+
+# OS / editor
+.DS_Store
+*~
+
+# Documentation site — Quartz (current) and mdbook (legacy output)
+docs/node_modules/
+docs/public/
+docs/book/
+docs/.quartz-cache/
+docs/tsconfig.tsbuildinfo
+docs/prof/
+
+# Local-only paths (also in quartz.config ignorePatterns)
+docs/private/
+docs/.obsidian/

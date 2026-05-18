@@ -1,5 +1,5 @@
 ---
-title: "How a Computer Actually Works"
+title: "Working of a Computer"
 order: 5
 ---
 

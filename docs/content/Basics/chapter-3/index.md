@@ -1,5 +1,5 @@
 ---
-title: "Chapter 3: Assembly Language"
+title: "Assembly Language"
 order: 21
 ---
 

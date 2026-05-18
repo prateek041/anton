@@ -1,1 +1,53 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
+
+// Book explorer: ellipsis on long titles, native tooltip via title, wider sidebar on hover.
+$explorerSidebarHoverWidth: 26rem;
+
+@media all and ($desktop) {
+  #quartz-body:has(> .sidebar.left:hover) {
+    grid-template-columns: $explorerSidebarHoverWidth auto #{$sidePanelWidth};
+    transition: grid-template-columns 0.2s ease;
+  }
+
+  #quartz-body {
+    transition: grid-template-columns 0.2s ease;
+  }
+}
+
+@media all and ($tablet) {
+  #quartz-body:has(> .sidebar.left:hover) {
+    grid-template-columns: $explorerSidebarHoverWidth auto;
+    transition: grid-template-columns 0.2s ease;
+  }
+
+  #quartz-body {
+    transition: grid-template-columns 0.2s ease;
+  }
+}
+
+.explorer {
+  .folder-container > div {
+    min-width: 0;
+    flex: 1;
+  }
+
+  ul.overflow li > a,
+  .folder-container a.folder-title,
+  .folder-container button.folder-button {
+    display: block;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .folder-container button.folder-button span.folder-title {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

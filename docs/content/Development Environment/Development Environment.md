@@ -61,9 +61,9 @@ a fetch, decode and execute cycle. Do you think it is smart enough to understand
 that complex website you are building? No. It needs help.
 
 To get a deeper understanding of how CPU works, you should read
-[[Everything about the CPU]], even though you don't need to finish it right now,
-it's a web of it's own. Everything you need to know for now, is already in this
-article.
+[Everything About the CPU](/Basics/chapter-1/the-cpu.md), even though you don't
+need to finish it right now, it's a web of it's own. Everything you need to know
+for now, is already in this article.
 
 #### Software managing that hardware (Operating System)
 
