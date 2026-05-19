@@ -182,6 +182,41 @@ export function splitAnchor(link: string): [string, string] {
   return [fp, anchor]
 }
 
+/**
+ * Strip repo-style path prefixes from internal links (e.g. `docs/content/…`) so they
+ * resolve against Quartz slugs inside the content directory.
+ */
+export function normalizeLinkPath(target: string, prefixes: string[]): string {
+  if (prefixes.length === 0) return target
+
+  const [pathPart, anchor] = splitAnchor(target)
+  const hadLeadingSlash = pathPart.startsWith("/")
+  const normalized = pathPart.replace(/\\/g, "/")
+  const strippedInput = stripSlashes(normalized)
+
+  const sortedPrefixes = [...prefixes]
+    .map((p) => stripSlashes(p.replace(/\\/g, "/")))
+    .filter((p) => p.length > 0)
+    .sort((a, b) => b.length - a.length)
+
+  let stripped = strippedInput
+  for (const prefix of sortedPrefixes) {
+    if (stripped === prefix) {
+      stripped = ""
+      break
+    }
+    if (stripped.startsWith(prefix + "/")) {
+      stripped = stripped.slice(prefix.length + 1)
+      break
+    }
+  }
+
+  if (stripped === strippedInput) return target
+
+  const lead = hadLeadingSlash ? "/" : ""
+  return (stripped.length === 0 ? lead || "." : lead + stripped) + anchor
+}
+
 export function slugTag(tag: string) {
   return tag
     .split("/")

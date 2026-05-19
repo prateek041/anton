@@ -4,6 +4,7 @@ import {
   RelativeURL,
   SimpleSlug,
   TransformOptions,
+  normalizeLinkPath,
   stripSlashes,
   simplifySlug,
   splitAnchor,
@@ -17,6 +18,11 @@ import { Root } from "hast"
 interface Options {
   /** How to resolve Markdown paths */
   markdownLinkResolution: TransformOptions["strategy"]
+  /**
+   * Path prefixes stripped from internal links before slug resolution.
+   * Use when authoring paths from the repo root (e.g. `docs/content/Basics/foo.md`).
+   */
+  linkPathPrefixes: string[]
   /** Strips folders from a link so that it looks nice */
   prettyLinks: boolean
   openLinksInNewTab: boolean
@@ -26,6 +32,7 @@ interface Options {
 
 const defaultOptions: Options = {
   markdownLinkResolution: "absolute",
+  linkPathPrefixes: [],
   prettyLinks: true,
   openLinksInNewTab: false,
   lazyLoad: false,
@@ -47,6 +54,9 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
               strategy: opts.markdownLinkResolution,
               allSlugs: ctx.allSlugs,
             }
+
+            const normalizeInternalLink = (dest: string) =>
+              normalizeLinkPath(dest, opts.linkPathPrefixes)
 
             visit(tree, "element", (node, _index, _parent) => {
               // rewrite all links
@@ -105,7 +115,7 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
                 if (isInternal) {
                   dest = node.properties.href = transformLink(
                     file.data.slug!,
-                    dest,
+                    normalizeInternalLink(dest),
                     transformOptions,
                   )
 
@@ -151,7 +161,7 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
                   let dest = node.properties.src as RelativeURL
                   dest = node.properties.src = transformLink(
                     file.data.slug!,
-                    dest,
+                    normalizeInternalLink(dest),
                     transformOptions,
                   )
                   node.properties.src = dest

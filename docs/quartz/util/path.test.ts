@@ -127,6 +127,27 @@ describe("transforms", () => {
     )
   })
 
+  test("normalizeLinkPath", () => {
+    const prefixes = ["docs/content", "content"]
+    assert.strictEqual(
+      path.normalizeLinkPath("/docs/content/Basics/chapter-3/why-assembly.md", prefixes),
+      "/Basics/chapter-3/why-assembly.md",
+    )
+    assert.strictEqual(
+      path.normalizeLinkPath("docs/content/Basics/foo.md", prefixes),
+      "Basics/foo.md",
+    )
+    assert.strictEqual(
+      path.normalizeLinkPath("/content/Basics/foo.md", prefixes),
+      "/Basics/foo.md",
+    )
+    assert.strictEqual(
+      path.normalizeLinkPath("/Basics/foo.md#section", prefixes),
+      "/Basics/foo.md#section",
+    )
+    assert.strictEqual(path.normalizeLinkPath("/Basics/foo.md", prefixes), "/Basics/foo.md")
+  })
+
   test("transformInternalLink", () => {
     asserts(
       [
