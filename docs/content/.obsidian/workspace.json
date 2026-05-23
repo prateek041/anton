@@ -1,0 +1,208 @@
+{
+  "main": {
+    "id": "f4d86f5e0f0fe723",
+    "type": "split",
+    "children": [
+      {
+        "id": "14ec09cc43e58ea3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e4a0814238f31c64",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "chapter-1/what-is-a-computer-really.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "what-is-a-computer-really"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5c7ca6d783a5abd8",
+    "type": "split",
+    "children": [
+      {
+        "id": "f74e5717f937412c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7ebf44061abb7ad2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "c74a17523f27acf8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-ghost",
+              "title": "search"
+            }
+          },
+          {
+            "id": "fe86b60ca50ef39e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "f3b79e17a5b041e9",
+    "type": "split",
+    "children": [
+      {
+        "id": "23b0e33d02438444",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5bc7e10dd22539a1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "phases/phase-1/Development Environment.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "lucide-ghost",
+              "title": "backlink"
+            }
+          },
+          {
+            "id": "99cef26a6cdb081d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "phases/phase-1/Development Environment.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "lucide-ghost",
+              "title": "outgoing-link"
+            }
+          },
+          {
+            "id": "370165c024e1ea5f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-ghost",
+              "title": "tag"
+            }
+          },
+          {
+            "id": "ef954202210b4e42",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "ef25cee674be8495",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "phases/phase-1/Development Environment.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-ghost",
+              "title": "outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "daily-notes:Open today's daily note": false,
+      "command-palette:Open command palette": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "e4a0814238f31c64",
+  "lastOpenFiles": [
+    "chapter-1/index.md",
+    "index.md",
+    "phases/phase-1/Development Environment.md",
+    "phases/phase-1/Everything needed to run a Program.md",
+    "phases/phase-1/index 1.md",
+    "CPU/Everything about the CPU.md",
+    "CPU",
+    "test.md",
+    "phases/phase-1/Hot Reloading.md",
+    "private/obsidian-template-quickstart.md",
+    "_templates/phase-note.md",
+    "_templates/chapter-note.md",
+    "_templates/chapter-page.md",
+    "_templates/note-default.md",
+    "private",
+    "_templates",
+    "phases/phase-1/index.md"
+  ]
+}
